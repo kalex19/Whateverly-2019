@@ -20,10 +20,12 @@ class App extends Component {
   }
   render() {
     return (
-      //div
-      //append c/h buttons and background img
+      <div className='startButton'>
+        <button className='campingButton'>Camping</button>
+        <button className='hikingButton'>Hiking</button>
       //upon click remove buttons and change img based on click
       //append main page with cards and filter buttons
+      </div>
     )
   }
 }
