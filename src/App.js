@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
-import Dataset from './Dataset'
+import Data from './Data';
 //import data
 
 class App extends Component {
   constructor() {
     super();
+
+    //const data =  passing in datafiles (data object)
     //declare state
     //can we use two states? Or need to combo dataset?
     //states for start
