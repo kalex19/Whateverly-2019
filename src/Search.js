@@ -29,7 +29,8 @@ class Search extends App {
   }
   render {
     return (
-      //
+      //label/input for search
+      //button?
     )
   }
 }
