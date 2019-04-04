@@ -1,6 +1,29 @@
 import React, {Component} from 'react';
 import Data from './Data';
-//import data
+
+const Dataset = camping.reduce((accum, campground) => {
+  if(!accum[campground.location]) {
+    accum[campground.location];
+    let currentCampground = campground.location;
+
+  let availCampgrounds = camping.filter(campground => {
+      if(currentCampground === campground.location) {
+          return campground;
+      }
+  });
+  let availTrails = trails.filter(trail => {
+      if(campground.location === trail.location) {
+          return trail
+      }
+  });
+
+  accum[campground.location] = {
+      'campground': availCampgrounds,
+      'trail': availTrails
+      }
+  }
+return accum
+}, {});
 
 class App extends Component {
   constructor() {
