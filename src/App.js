@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Data from './Data';
+import {camping, trails} from './Data.';
 
 const Dataset = camping.reduce((accum, campground) => {
   if(!accum[campground.location]) {
