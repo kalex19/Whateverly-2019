@@ -1,68 +1,48 @@
 import React, {Component} from 'react';
-import App from './App.js';
 import './Start.css';
 
-class Start extends App {
-  constructor() {
-    super();
+
+export default class Start extends Component {
+  constructor(props) {
+    super(props);
       this.state= {
         startInputValue: '',
-        shown: true
-        //may need state for selected hiking/camping
       }
-
-    displayMainPage = () => {
-      this.setState({
-        shown: !this.state.shown
-      })
     }
 
-    selectCamping = (event) => {
+   selectCamping = (event) => {
       event.preventDefault();
-      this.props.Dataset.campground
-    },
+      return this.props.campground
+    }
 
-    selectHiking = (event) => {
+     selectHiking = (event) => {
       event.preventDefault();
-      this.props.Dataset.trail
-    },
+       return this.props.trail
+    }
 
-    grabLocation = (event) => {
+     grabLocation = (event) => {
       this.setState({
         startInputValue: event.target.value
       })
-    },
+    }
 
-    startSubmitLocation = (event) => {
+     startSubmitLocation = (event) => {
       event.preventDefault();
       this.props.setLocation(this.setState.startInputValue);
     }
-    ///This will be referencing App Location
-  }
 
-  render {
-
-    let shown = {
-      display: this.state.shown ? visible : hidden
-    };
-
-    let hidden = {
-      display: this.state.shown ? hidden : visible
-    };
-
+  render () {
     return (
-      <React.Fragment className="startWrapper" style={shown}>
-        <input type="button" className="campStartBtn visibility"  value="Camping" onClick={selectCamping} />
-        //onClick={this.toggle.bind(this)}
-        <input type="button" className="hikeStartBtn visibility" value="Hiking" onClick={selectHiking} />
-        <form onSubmit={this.startSubmitLocation} className=' startLocationSearch searchVisibility' style={ hidden } >
+      <section>
+        <input type="button" className="campStartBtn visibility"  value="Camping" onClick={this.selectCamping} />
+        <input type="button" className="hikeStartBtn visibility" value="Hiking" onClick={this.selectHiking} />
+        <form onSubmit={this.startSubmitLocation} className=' startLocationSearch searchVisibility'>
           <label>Search:</label>
           <input type="text" className="startLocationInput" placeholder="Please choose a Location" value= {this.state.startInputValue} onChange={this.grabLocation} />
           <input type="submit" className="startSubmitBtn" value="Submit" />
         </form>
-      </React.Fragment>
+      </section>
     )
   }
 }
 
-export default Start;

@@ -2,10 +2,10 @@
 .startWrapper {
     display: block;
     position: relative;
-    background: url("../WhateverlyImgs/StartBackgrnd.jpeg") no-repeat;
+    background: url("./WhateverlyImgs/StartBackgrnd.jpeg") no-repeat;
     background-size: cover;
     margin: 0;
-    z-index: 2;
+    /* z-index: 2; */
 }
 
 .campStartBtn,
