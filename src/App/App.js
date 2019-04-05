@@ -47,7 +47,12 @@ export default class App extends Component {
         .catch(error => console.log('Hiking Error', error)); 	 
    }
 
+  //  cleanUpCampingData(campgrounds) {
+
+  //  }
+
    cleanUpData(campgrounds, trails) {
+     console.log('Campground Test', campgrounds)
     let newData;
     const Dataset = campgrounds.reduce((accum, campground) => {
       if(!accum[campground.location]) {
