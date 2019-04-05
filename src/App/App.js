@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-// import {camping, trails} from '../Data/Data.js';
 import './App.css';
 import Start from '../Start/Start.js';
 // import Card from './Card.js';
@@ -9,9 +8,9 @@ export default class App extends Component {
   constructor() {
     super();
 
-    this.state ={ 
-      allCampgrounds: null,
-      allTrails: null
+    this.state = { 
+      allCampgrounds: [],
+      allTrails: []
     }
     //const data =  passing in datafiles (data object)
     //declare state
@@ -32,7 +31,7 @@ export default class App extends Component {
       .then(response => response.json()) 
       .then(selectCamping => {
           this.setState({		    
-            allCampgrounds: this.campCleanUpData(selectCamping) 
+            allCampgrounds: selectCamping.camping 
         });
       })
       .catch(error => console.log('Camping Error', error));
@@ -41,26 +40,29 @@ export default class App extends Component {
         .then(response => response.json()) 
         .then(selectHiking => {
           this.setState({			
-            allTrails: this.hikeCleanUpData(selectHiking) 
+            allTrails: selectHiking.trails 
         });	
       })
         .catch(error => console.log('Hiking Error', error)); 	 
    }
 
-  campCleanUpData(camping) {
-    let allCampgrounds = camping.camping;
-    return allCampgrounds;
-  }
+  // campCleanUpData(camping) {
+  //   let allCampgrounds = camping.camping;
+  //   return allCampgrounds;
+  // }
 
-  hikeCleanUpData(trails) {
-    let allTrails = trails.trails;
-    return allTrails;
-  }
+  // hikeCleanUpData(trails) {
+  //   let allTrails = trails.trails;
+  //   return allTrails;
+  // }
 
   render() {
     return (
       <div className='startScreen'>
-       <Start/>
+       <Start
+       allCampgrounds = {this.state.allCampgrounds}
+       allTrails = {this.state.allTrails}
+        />
       </div>
     )
   }
