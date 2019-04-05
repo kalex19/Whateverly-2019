@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
-import {camping, trails} from './Data.';
+import {camping, trails} from './Data.js';
+import './App.css';
+import Start from './Start.js';
+// import Card from './Card.js';
 
 const Dataset = camping.reduce((accum, campground) => {
   if(!accum[campground.location]) {
-    accum[campground.location];
+    let newData = accum[campground.location];
     let currentCampground = campground.location;
 
   let availCampgrounds = camping.filter(campground => {
@@ -17,7 +20,7 @@ const Dataset = camping.reduce((accum, campground) => {
       }
   });
 
-  accum[campground.location] = {
+  newData = {
       'campground': availCampgrounds,
       'trail': availTrails
       }
@@ -25,7 +28,7 @@ const Dataset = camping.reduce((accum, campground) => {
 return accum
 }, {});
 
-class App extends Component {
+export default class App extends Component {
   constructor() {
     super();
 
@@ -45,14 +48,9 @@ class App extends Component {
   }
   render() {
     return (
-      <div className='startButton'>
-        <button className='campingButton'>Camping</button>
-        <button className='hikingButton'>Hiking</button>
-      //upon click remove buttons and change img based on click
-      //append main page with cards and filter buttons
+      <div className='startScreen'>
+       <Start/>
       </div>
     )
   }
 }
-
-export default App;
