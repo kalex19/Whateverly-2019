@@ -26,18 +26,34 @@ const mockCamping = [
     "nearest-city": null
     }
 ]
+const mockInput = 'Grand Junction';
 
 describe('Start', () => {
 let wrapper 
 
 beforeEach(() => {
     wrapper.shallow(
-        <Start />
+        // <Start startInputValue = ''/>
     )
 });
+it('should have an initial input value of an empty string', () => {
+    expect(startInputValue).toEqual('');
+});
+
+it('should be able to grab the user location based on submission, () => {
+    expect(startInputValue).toEqual('');
+    grabLocation();
+    expect(startInputValue).toEqual{ mockInput };
+});
+
+// it('should be able to submit a user location based on submission', () => {
+
+// });
 
 it('should mock snapshot', () => {
     expect(wrapper).toMatchSnapshot();
 })
 
 })
+
+//Need to review testing and test out based on functionality with App
