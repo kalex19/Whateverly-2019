@@ -10,13 +10,13 @@ export default class Start extends Component {
       }
     }
 
-   selectCamping = () => {
-      return this.props.campground
-    }
+  //  selectCamping = () => {
+  //     return this.props.campground
+  //   }
 
-     selectHiking = () => {
-       return this.props.trail
-    }
+  //    selectHiking = () => {
+  //      return this.props.trail
+  //   }
 
      grabLocation = (event) => {
       this.setState({
