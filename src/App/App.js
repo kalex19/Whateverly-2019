@@ -10,8 +10,8 @@ export default class App extends Component {
     super();
 
     this.state ={ 
-      camping:[],
-      trail: []
+      allCampgrounds: null,
+      allTrails: null
     }
     //const data =  passing in datafiles (data object)
     //declare state
@@ -31,8 +31,8 @@ export default class App extends Component {
     fetch('https://fe-apps.herokuapp.com/api/v1/whateverly/1901/b-coyle/camping')
       .then(response => response.json()) 
       .then(selectCamping => {
-          this.setState({			    
-            camping: this.cleanUpData(selectCamping) 
+          this.setState({		    
+            allCampgrounds: this.campCleanUpData(selectCamping) 
         });
       })
       .catch(error => console.log('Camping Error', error));
@@ -41,46 +41,21 @@ export default class App extends Component {
         .then(response => response.json()) 
         .then(selectHiking => {
           this.setState({			
-            trail: this.cleanUpData(selectHiking) 
+            allTrails: this.hikeCleanUpData(selectHiking) 
         });	
       })
         .catch(error => console.log('Hiking Error', error)); 	 
    }
 
-  //  cleanUpCampingData(campgrounds) {
+  campCleanUpData(camping) {
+    let allCampgrounds = camping.camping;
+    return allCampgrounds;
+  }
 
-  //  }
-
-   cleanUpData(campgrounds, trails) {
-     console.log('Campground Test', campgrounds)
-    let newData;
-    const Dataset = campgrounds.reduce((accum, campground) => {
-      if(!accum[campground.location]) {
-        newData = accum[campground.location];
-        console.log('Test newData', newData)
-        let currentCampground = campground.location;
-    
-      let availCampgrounds = campgrounds.filter(campground => {
-          if(currentCampground === campground.location) {
-              return campground;
-          }
-      });
-      let availTrails = trails.filter(trail => {
-          if(campground.location === trail.location) {
-              return trail;
-          }
-      });
-    
-      newData = {
-          'campground': availCampgrounds,
-          'trail': availTrails
-          }
-      }
-    return accum
-    }, {});
-    console.log('Test Dataset', Dataset);
-    return newData
-   }
+  hikeCleanUpData(trails) {
+    let allTrails = trails.trails;
+    return allTrails;
+  }
 
   render() {
     return (
