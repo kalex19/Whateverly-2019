@@ -10,23 +10,24 @@ export default class Start extends Component {
       }
     }
 
-  //  selectCamping = () => {
-  //     return this.props.campground
-  //   }
+    selectCamping = (props) => {
+      return this.props.campgrounds;
+    }
 
-  //    selectHiking = () => {
-  //      return this.props.trail
-  //   }
+    selectHiking = (props) => {
+       return this.props.allTrails
+    }
 
-     grabLocation = (event) => {
+    grabLocation = (event) => {
       this.setState({
         startInputValue: event.target.value
       })
     }
 
-     startSubmitLocation = (event) => {
+    startSubmitLocation = (event, props) => {
       event.preventDefault();
-      this.props.setLocation(this.setState.startInputValue);
+      this.setState({ 
+        startInputValue: this.grabLocation })
     }
 
   render () {
