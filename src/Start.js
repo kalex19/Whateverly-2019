@@ -33,12 +33,14 @@ export default class Start extends Component {
 
   render () {
     return (
-      <section>
-        <input type="button" className="campStartBtn visibility"  value="Camping" onClick={this.selectCamping} />
-        <input type="button" className="hikeStartBtn visibility" value="Hiking" onClick={this.selectHiking} />
-        <form onSubmit={this.startSubmitLocation} className=' startLocationSearch searchVisibility'>
-          <label>Search:</label>
-          <input type="text" className="startLocationInput" placeholder="Please choose a Location" value= {this.state.startInputValue} onChange={this.grabLocation} />
+      <section className='startWrapper'>
+        <h1 className="header">XCO</h1>
+        <div className='buttonHolder'>
+          <input type="button" className="campStartBtn"  value="Camping" onClick={this.selectCamping} />
+          <input type="button" className="hikeStartBtn" value="Hiking" onClick={this.selectHiking} />
+        </div>
+        <form onSubmit={this.startSubmitLocation} className=' startLocationSearch'>
+          <input type="text" className="startLocationInput" placeholder="Please Enter a Location..." value= {this.state.startInputValue} onChange={this.grabLocation} />
           <input type="submit" className="startSubmitBtn" value="Submit" />
         </form>
       </section>
