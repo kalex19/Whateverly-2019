@@ -6,17 +6,15 @@ export default class Start extends Component {
   constructor(props) {
     super(props);
       this.state= {
-        startInputValue: '',
+        startInputValue: ''
       }
     }
 
-   selectCamping = (event) => {
-      event.preventDefault();
+   selectCamping = () => {
       return this.props.campground
     }
 
-     selectHiking = (event) => {
-      event.preventDefault();
+     selectHiking = () => {
        return this.props.trail
     }
 
@@ -47,4 +45,5 @@ export default class Start extends Component {
     )
   }
 }
+
 
