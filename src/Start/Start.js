@@ -11,7 +11,6 @@ export default class Start extends Component {
     }
 
     handleChange = (event) => {
-      console.log('userinput')
       event.preventDefault();
       this.setState({
         startInputValue: event.target.value
@@ -19,13 +18,11 @@ export default class Start extends Component {
     }
 
     handleClickCampingBtn = (props) => {
-      console.log('emily');
-      this.props.assignUserCampInput(this.state.startInputValue);
+      this.props.userCampInput(this.state.startInputValue);
     }
 
     handleClickHikingBtn = (props) => {
-      console.log('bridgett');
-      this.props.assignUserHikeInput(this.state.startInputValue);
+      this.props.userHikeInput(this.state.startInputValue);
     }
 
   

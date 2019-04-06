@@ -10,7 +10,7 @@ export default class App extends Component {
     this.state = { 
       allCampgrounds: [],
       allTrails: [],
-      userCampInputvalue: '',
+      userCampInputValue: '',
       userHikeInputValue: ''
     }
   }
@@ -38,14 +38,14 @@ export default class App extends Component {
    assignUserCampInput = (startInputValue) => {
      console.log('yes');
     this.setState ({
-      userCampInputvalue: startInputValue
+      userCampInputValue: startInputValue
     })
   }
 
   assignUserHikeInput = (startInputValue) => {
     console.log('wow');
     this.setState ({
-      userHikeInputvalue: startInputValue
+      userHikeInputValue: startInputValue
     })
   }
  
@@ -55,6 +55,8 @@ export default class App extends Component {
        <Start
        allCampgrounds = {this.state.allCampgrounds}
        allTrails = {this.state.allTrails}
+       userCampInput = {this.assignUserCampInput}
+       userHikeInput = {this.assignUserHikeInput}
         />
       </div>
     )
