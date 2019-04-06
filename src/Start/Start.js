@@ -6,7 +6,8 @@ export default class Start extends Component {
   constructor(props) {
     super(props);
       this.state= {
-        startInputValue: ''
+        startInputValue: '',
+        hovered: false
       }
     }
 
@@ -44,6 +45,19 @@ export default class Start extends Component {
       })
     }
 
+  //   cancelHover = () => {
+  //       this.setState ({
+  //         hovered: false
+  //       })
+  //   }
+
+  //   setHover = () => {
+  //     this.setState ({
+  //       hovered: true
+  //     })
+  // }
+
+
   render () {
     return (
       <section className='startWrapper'>
@@ -51,8 +65,8 @@ export default class Start extends Component {
         <section className='startLocationSearch'>
           <input type="text" className="startLocationInput" placeholder="Please Enter a Location..." value= {this.props.startInputValue} onChange={this.grabLocation} />
           <div className='buttonHolder'>
-          <input type="button" className="campStartBtn"  value="Camping" onClick={this.selectCampingBtn} />
-          <input type="button" className="hikeStartBtn" value="Hiking" onClick={this.selectHikingBtn} />
+          <input type="button" className="campStartBtn"  value='Camping' onClick={this.selectCampingBtn}  onMouseOver={this.setHover} onMouseOut={this.cancelHover} />
+          <input type="button" className="hikeStartBtn" value='Hiking' onClick={this.selectHikingBtn} onMouseOver={this.setHover} onMouseOut={this.cancelHover} />
         </div>
         </section>
       </section>

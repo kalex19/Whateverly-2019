@@ -8,46 +8,49 @@
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100px;
-}
-
-.buttonHolder {
-    margin-top: 10%;
-    margin-left: 5%;
-}
-
-.campStartBtn,
-.hikeStartBtn {
-    display: block;
-    width: 20%;
-    height: 50px;
-    color: rgb(230, 228, 237);
-    background-color: rgb(62, 39, 47);
-    border: 1px solid white;
-    margin: 1% 38%;
-}
-
-.startLocationSearch {
-    display: flex;
-    margin-top: 10%;
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    height: 1000px;
 }
 
 .startLocationInput {
     width: 40%;
     height: 60px;
-    border: 5px solid white;
+    border: 3px solid #af5700 ;
     color: black;
     margin: 0 30%;
-    margin-bottom: 5%;
+    margin-bottom: 3%;
 }
 
-.startSubmitBtn {
-    width: 20%;
+.startLocationSearch {
+    display: flex;
+    margin-top: 3%;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.buttonHolder {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 40%;
+}
+
+.campStartBtn,
+.hikeStartBtn {
+    width: 40%;
     height: 50px;
-    border: 3px solid #f4efec;
+    color: rgb(230, 228, 237);
+    background-color: rgb(62, 39, 47);
+    border: 1px solid white;
+}
+
+/* .campStartBtn a:hover {
     color: #e8dddd;
     background-color: #af5700;
 }
+
+.hikeStartBtn a:hover {
+    color: #e8dddd;
+    background-color: #af5700;
+} */
+
