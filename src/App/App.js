@@ -9,10 +9,12 @@ export default class App extends Component {
     super();
     this.state = { 
       allCampgrounds: [],
-      allTrails: []
+      allTrails: [],
+      userCampInputvalue: '',
+      userHikeInputValue: ''
     }
-   
   }
+
   componentDidMount() {
     fetch('https://fe-apps.herokuapp.com/api/v1/whateverly/1901/b-coyle/camping')
       .then(response => response.json()) 
@@ -33,7 +35,20 @@ export default class App extends Component {
         .catch(error => console.log('Hiking Error', error)); 	 
    }
 
+   assignUserCampInput = (startInputValue) => {
+     console.log('yes');
+    this.setState ({
+      userCampInputvalue: startInputValue
+    })
+  }
 
+  assignUserHikeInput = (startInputValue) => {
+    console.log('wow');
+    this.setState ({
+      userHikeInputvalue: startInputValue
+    })
+  }
+ 
   render() {
     return (
       <div className='startScreen'>
