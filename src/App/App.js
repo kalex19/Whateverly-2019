@@ -11,19 +11,7 @@ export default class App extends Component {
       allCampgrounds: [],
       allTrails: []
     }
-    //const data =  passing in datafiles (data object)
-    //declare state
-    //can we use two states? Or need to combo dataset?
-    //states for start
-    //states for card
-    //states for filter buttons
-    //states for search
-    //states for storagebuttons
-    //ie: <Card entry={this.state.entry}/>
-
-    //method:
-    //toggle css hidden class/z-index
-
+   
   }
   componentDidMount() {
     fetch('https://fe-apps.herokuapp.com/api/v1/whateverly/1901/b-coyle/camping')
