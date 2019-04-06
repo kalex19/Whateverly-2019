@@ -7,7 +7,6 @@ import Start from '../Start/Start.js';
 export default class App extends Component {
   constructor() {
     super();
-
     this.state = { 
       allCampgrounds: [],
       allTrails: []
@@ -46,15 +45,6 @@ export default class App extends Component {
         .catch(error => console.log('Hiking Error', error)); 	 
    }
 
-  // campCleanUpData(camping) {
-  //   let allCampgrounds = camping.camping;
-  //   return allCampgrounds;
-  // }
-
-  // hikeCleanUpData(trails) {
-  //   let allTrails = trails.trails;
-  //   return allTrails;
-  // }
 
   render() {
     return (
