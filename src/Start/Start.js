@@ -12,6 +12,7 @@ export default class Start extends Component {
 
     selectCampingBtn = (props) => {
       this.checkCampingLocation(props);
+      console.log('Emily', this.props.allCampgrounds);
       return this.props.campgrounds;
     }
 
@@ -25,26 +26,23 @@ export default class Start extends Component {
       this.setState({
         startInputValue: event.target.value
       })
-      console.log('test',this.state.startInputValue.toUpperCase());
     }
 
     checkCampingLocation = (props) => {
-      for(var i =0; i < this.props.allCampgrounds.length; i++){
-        console.log('test 1', this.props.allCampgrounds[i].location.toUpperCase())
-      }
-
-      // this.props.allCampgrounds.filter((campground) => {
-      //   if(this.state.startInputValue.toUpperCase() === this.props.allCampgrounds.location.toUpperCase()) {
-      //     console.log('Hello!');
-      //     return 'hello';
-      //   }
-      // })
+      let filteredCampground = this.props.allCampgrounds.filter(campground => {
+        if (campground.location === this.state.startInputValue) {
+          return campground
+        }
+      })
     }
 
-    // checkHikingLocation = (props) => {
-
-    // }
-
+    checkHikingLocation = (props) => {
+      let filteredHiking = this.props.allTrails.filter(trail => {
+        if (trail.location === this.state.startInputValue) {
+          return trail
+        }
+      })
+    }
 
   render () {
     return (
