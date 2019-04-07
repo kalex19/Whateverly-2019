@@ -44,13 +44,13 @@
     border: 1px solid white;
 }
 
-/* .campStartBtn a:hover {
+.campStartBtn:hover {
     color: #e8dddd;
     background-color: #af5700;
 }
 
-.hikeStartBtn a:hover {
+.hikeStartBtn:hover {
     color: #e8dddd;
     background-color: #af5700;
-} */
+}
 

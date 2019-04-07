@@ -1,9 +1,31 @@
 import React, {Component} from 'react';
-import App from './App.js';
+import './Camping.css';
 
-class Card extends App {
-  constructor() {
-    super();
+export default class Camping extends Component {
+  constructor(props) {
+    super(props);
+
+
+
+
+
+  }
+    // checkCampingLocation = (props) => {
+    //   console.log('hello');
+    //   let filteredCampground = this.props.allCampgrounds.filter(campground => {
+    //     if (campground.location === this.state.userCampInputValue) {
+    //       return campground
+    //     }
+    //   })
+    // }
+
+    // checkHikingLocation = (props) => {
+    //   let filteredHiking = this.props.allTrails.filter(trail => {
+    //     if (trail.location === this.state.userHikeInputValue) {
+    //       return trail
+    //     }
+    //   })
+    // }
     //if camping:
     //name
     //location
@@ -25,13 +47,10 @@ class Card extends App {
     //method:
     //save to local storage (info based on button pressed)
 
-  }
-  render {
+
+  render () {
     return (
-      //div
-      //create Popup Comp
+      <p>Camp</p>
     )
   }
 }
-
-export default Card;
