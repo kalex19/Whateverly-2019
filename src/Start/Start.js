@@ -19,10 +19,12 @@ export default class Start extends Component {
 
     handleClickCampingBtn = (props) => {
       this.props.userCampInput(this.state.startInputValue);
+      this.props.campingBoolean();
     }
 
     handleClickHikingBtn = (props) => {
       this.props.userHikeInput(this.state.startInputValue);
+      this.props.hikingBoolean();
     }
 
   

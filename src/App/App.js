@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import './App.css';
 import Start from '../Start/Start.js';
-// import Card from './Card.js';
-
+import Camping from '../Camping/Camping.js';
+import Hiking from '../Hiking/Hiking.js'
 
 export default class App extends Component {
   constructor() {
@@ -11,7 +11,9 @@ export default class App extends Component {
       allCampgrounds: [],
       allTrails: [],
       userCampInputValue: '',
-      userHikeInputValue: ''
+      userHikeInputValue: '',
+      camping: false,
+      hiking: false
     }
   }
 
@@ -35,6 +37,18 @@ export default class App extends Component {
         .catch(error => console.log('Hiking Error', error)); 	 
    }
 
+   assignCampingBoolean = () => {
+    this.setState({
+      camping: true
+    })
+   }
+
+   assignHikingBoolean = () => {
+     this.setState({
+       hiking: true
+     })
+  }
+
    assignUserCampInput = (startInputValue) => {
      console.log('yes');
     this.setState ({
@@ -50,6 +64,20 @@ export default class App extends Component {
   }
  
   render() {
+    let toggleCards;
+
+    if(this.state.camping === true) {
+       toggleCards =  <Camping
+        allCampgrounds = {this.state.allCampgrounds}
+        allTrails = {this.state.allTrails} 
+        assignedUserCampInput = {this.state.userCampInputValue}
+   />
+    } else if (this.state.hiking === true) {
+      toggleCards = (<Hiking
+      allCampgrounds = {this.state.allCampgrounds}
+      allTrails = {this.state.allTrails} 
+      assignedUserHikeInput = {this.state.userHikeInputValue}/>)
+    }
     return (
       <div className='startScreen'>
        <Start
@@ -57,8 +85,12 @@ export default class App extends Component {
        allTrails = {this.state.allTrails}
        userCampInput = {this.assignUserCampInput}
        userHikeInput = {this.assignUserHikeInput}
+       campingBoolean = {this.assignCampingBoolean}
+       hikingBoolean = {this.assignHikingBoolean}
         />
+      {toggleCards}
       </div>
+
     )
   }
 }
