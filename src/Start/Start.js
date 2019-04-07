@@ -18,7 +18,9 @@ export default class Start extends Component {
     }
 
     handleClickCampingBtn = (props) => {
+      console.log('hello');
       this.props.userCampInput(this.state.startInputValue);
+      this.props.filteredCampground(this.state.startInputValue);
       this.props.campingBoolean();
     }
 
@@ -33,7 +35,7 @@ export default class Start extends Component {
       <section className='startWrapper'>
         <h1 className="header">XCO</h1>
         <section className='startLocationSearch'>
-          <input type="text" className="startLocationInput" placeholder="Please Enter a Location..." value= {this.props.startInputValue} onChange={this.handleChange} />
+          <input type="text" className="startLocationInput" placeholder="Please Enter a Location..." value= {this.state.startInputValue} onChange={this.handleChange} />
           <div className='buttonHolder'>
           <input type="button" className="campStartBtn"  value='Camping' onClick={this.handleClickCampingBtn}  />
           <input type="button" className="hikeStartBtn" value='Hiking' onClick={this.handleClickHikingBtn} />

@@ -13,7 +13,9 @@ export default class App extends Component {
       userCampInputValue: '',
       userHikeInputValue: '',
       camping: false,
-      hiking: false
+      hiking: false,
+      filteredCampground: [],
+      filteredHiking: []
     }
   }
 
@@ -42,6 +44,16 @@ export default class App extends Component {
       camping: true
     })
    }
+
+  checkCampingLocation = (userCampInputValue) => {
+    console.log('Test camping location')
+    let filteredCampground = this.state.allCampgrounds.filter(campground => campground.location === userCampInputValue)
+    console.log('Test filter', userCampInputValue);
+    this.setState ({
+      filteredCampground: filteredCampground
+    })
+  }
+
 
    assignHikingBoolean = () => {
      this.setState({
@@ -87,6 +99,7 @@ export default class App extends Component {
        userHikeInput = {this.assignUserHikeInput}
        campingBoolean = {this.assignCampingBoolean}
        hikingBoolean = {this.assignHikingBoolean}
+       filteredCampground = {this.checkCampingLocation}
         />
       {toggleCards}
       </div>

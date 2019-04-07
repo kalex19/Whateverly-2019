@@ -21,7 +21,14 @@ class StorageButtons extends App {
   }
   render {
     return (
+      <section>
+        <input type='button' value='Favorite' />
+        <input type='button' value='Visited' />
+        <input type='button' value='Reset' />
+
+      </section>
       //favorite
+
       //visited
       //reset search  
     )
