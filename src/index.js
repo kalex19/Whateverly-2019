@@ -1,5 +1,5 @@
-import './Styles/normalize.css';
-import './Styles/index.css';
+import './Styles/normalize.scss';
+import './Styles/index.scss';
 import React from 'react';
 import ReactDom from 'react-dom';
 import App from './App/App.js';

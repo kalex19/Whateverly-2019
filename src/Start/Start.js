@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './Start.css';
+import './Start.scss';
 
 
 export default class Start extends Component {
