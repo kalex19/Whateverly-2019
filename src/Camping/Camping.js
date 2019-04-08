@@ -10,27 +10,15 @@ export default class Camping extends Component {
 
 
   }
-    // checkCampingLocation = (props) => {
-    //   console.log('hello');
-    //   let filteredCampground = this.props.allCampgrounds.filter(campground => {
-    //     if (campground.location === this.state.userCampInputValue) {
-    //       return campground
-    //     }
-    //   })
-    // }
-
-    // checkHikingLocation = (props) => {
-    //   let filteredHiking = this.props.allTrails.filter(trail => {
-    //     if (trail.location === this.state.userHikeInputValue) {
-    //       return trail
-    //     }
-    //   })
-    // }
-
 
   render () {
+    console.log('Filtered Campground', this.props.filteredCampgrounds[0])
     return (
-      <p>Camp</p>
+      <section>
+        <h2>{ this.props.filteredCampgrounds[0].name }</h2>
+        <h3>{ this.props.filteredCampgrounds[0].location }</h3>
+        <h3>{  this.props.filteredCampgrounds[0].season }</h3>
+      </section>
     )
   }
 }

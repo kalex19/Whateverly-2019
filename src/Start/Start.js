@@ -26,6 +26,7 @@ export default class Start extends Component {
 
     handleClickHikingBtn = (props) => {
       this.props.userHikeInput(this.state.startInputValue);
+      this.props.filteredHiking(this.state.startInputValue);
       this.props.hikingBoolean();
     }
 

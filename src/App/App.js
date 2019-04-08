@@ -45,14 +45,22 @@ export default class App extends Component {
     })
    }
 
+   checkHikingLocation = (userHikeInputValue) => {
+    console.log('User Input Hike', userHikeInputValue);
+    let filteredHiking = this.state.allTrails.filter(trail => trail.location === userHikeInputValue || trail["nearest-city"] === userHikeInputValue)
+    this.setState ({
+      filteredHiking: filteredHiking
+    })
+  }
+
+
   checkCampingLocation = (userCampInputValue) => {
-    console.log('Test camping location')
-    let filteredCampground = this.state.allCampgrounds.filter(campground => campground.location === userCampInputValue)
-    console.log('Test filter', userCampInputValue);
+    let filteredCampground = this.state.allCampgrounds.filter(campground => campground.location === userCampInputValue || campground["nearest-city"] === userCampInputValue)
     this.setState ({
       filteredCampground: filteredCampground
     })
   }
+
 
 
    assignHikingBoolean = () => {
@@ -85,10 +93,12 @@ export default class App extends Component {
         assignedUserCampInput = {this.state.userCampInputValue}
    />
     } else if (this.state.hiking === true) {
-      toggleCards = (<Hiking
-      allCampgrounds = {this.state.allCampgrounds}
-      allTrails = {this.state.allTrails} 
-      assignedUserHikeInput = {this.state.userHikeInputValue}/>)
+      toggleCards = <Hiking
+        allCampgrounds = {this.state.allCampgrounds}
+        allTrails = {this.state.allTrails} 
+        assignedUserHikeInput = {this.state.userHikeInputValue}
+        filteredHiking = {this.state.filteredHiking}
+    />
     }
     return (
       <div className='startScreen'>
