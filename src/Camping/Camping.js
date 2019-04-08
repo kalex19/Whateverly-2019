@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './Camping.scss';
+import CampCard from '../CampCard/CampCard.js';
 
 export default class Camping extends Component {
   constructor(props) {
@@ -8,13 +9,16 @@ export default class Camping extends Component {
   }
 
   render () {
-    console.log('Filtered Campground', this.props.filteredCampgrounds[0])
+    let Card = this.props.filteredCampgrounds.map((campground) => {
+      return (<CampCard 
+        filteredCampgrounds = {campground}
+        key = {campground.name}
+      />)
+
+    })
+    
     return (
-      <section>
-        <h2>{ this.props.filteredCampgrounds[0].name }</h2>
-        <h3>{ this.props.filteredCampgrounds[0].location }</h3>
-        <h3>{  this.props.filteredCampgrounds[0].season }</h3>
-      </section>
+      <div>{ Card }</div>
     )
   }
 }
