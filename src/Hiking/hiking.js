@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './Hiking.css';
+import './Hiking.scss';
 
 export default class Hiking extends Component {
   constructor(props) {
