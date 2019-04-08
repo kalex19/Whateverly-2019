@@ -1,22 +1,23 @@
 import React, {Component} from 'react';
 import './Hiking.scss';
+import HikeCard from '../HikeCard/HikeCard.js';
 
 export default class Hiking extends Component {
   constructor(props) {
     super(props);
-
   }
 
 
 
      render () {
-
+      let Card = this.props.filteredHiking.map((trail) => {
+        return (<HikeCard 
+          filteredHiking = {trail}
+          key = {trail.name}
+      />)
+    })
          return (
-          <section>
-            <h2>{ this.props.filteredHiking[0].name }</h2>
-            <h3>{ this.props.filteredHiking[0].location }</h3>
-            <h3>{  this.props.filteredHiking[0].length } miles</h3>
-          </section>
+          <div>{ Card }</div>
          )
      }
 }
