@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './App.css';
+import './App.scss';
 import Start from '../Start/Start.js';
 import Camping from '../Camping/Camping.js';
 import Hiking from '../Hiking/Hiking.js'

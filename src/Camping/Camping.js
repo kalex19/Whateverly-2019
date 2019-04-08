@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './Camping.css';
+import './Camping.scss';
 
 export default class Camping extends Component {
   constructor(props) {
