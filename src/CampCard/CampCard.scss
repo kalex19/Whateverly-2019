@@ -1,0 +1,18 @@
+.campingCard{
+    border: #3e272f solid 2px;
+    font-size: 15px;
+    color: #3e272f;
+    background-color: white;
+    grid-column-start: 2;
+    margin: 20px;
+    padding: 5px;
+}
+
+.textLabel{
+    // font-weight: 900;
+}
+
+.campName {
+    // font-weight: 700;
+    border-bottom: 2px solid #3e272f;
+}

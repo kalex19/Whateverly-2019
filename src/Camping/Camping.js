@@ -18,7 +18,7 @@ export default class Camping extends Component {
     })
     
     return (
-      <div>{ Card }</div>
+      <section className='campCardContainer'>{ Card }</section>
     )
   }
 }

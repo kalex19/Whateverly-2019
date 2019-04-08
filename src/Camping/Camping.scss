@@ -1,8 +1,6 @@
-h2 {
-  font-size: 3em;
-  color: white;
+.campCardContainer {
+  margin: 5px;
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
 }
-h3 {
-  font-size: 2em;
-  color: white;
-}
+
