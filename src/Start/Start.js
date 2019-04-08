@@ -20,7 +20,7 @@ export default class Start extends Component {
     handleClickCampingBtn = (props) => {
       // console.log('hello');
       this.props.userCampInput(this.state.startInputValue);
-      this.props.filteredCampground(this.state.startInputValue);
+      this.props.filteredCampgrounds(this.state.startInputValue);
       this.props.campingBoolean();
     }
 

@@ -14,7 +14,7 @@ export default class App extends Component {
       userHikeInputValue: '',
       camping: false,
       hiking: false,
-      filteredCampground: [],
+      filteredCampgrounds: [],
       filteredHiking: []
     }
   }
@@ -46,9 +46,9 @@ export default class App extends Component {
    }
 
   checkCampingLocation = (userCampInputValue) => {
-    let filteredCampground = this.state.allCampgrounds.filter(campground => campground.location === userCampInputValue || campground["nearest-city"] === userCampInputValue)
+    let filteredCampgrounds = this.state.allCampgrounds.filter(campground => campground.location === userCampInputValue || campground["nearest-city"] === userCampInputValue)
     this.setState ({
-      filteredCampground: filteredCampground
+      filteredCampgrounds: filteredCampgrounds
     })
   }
 
@@ -87,7 +87,7 @@ export default class App extends Component {
         allCampgrounds = {this.state.allCampgrounds}
         allTrails = {this.state.allTrails} 
         assignedUserCampInput = {this.state.userCampInputValue}
-        filteredCampgrounds = {this.state.filteredCampground}
+        filteredCampgrounds = {this.state.filteredCampgrounds}
    />
     } else if (this.state.hiking === true) {
         toggleCards = <Hiking
@@ -107,7 +107,7 @@ export default class App extends Component {
        userHikeInput = {this.assignUserHikeInput}
        campingBoolean = {this.assignCampingBoolean}
        hikingBoolean = {this.assignHikingBoolean}
-       filteredCampground = {this.checkCampingLocation}
+       filteredCampgrounds = {this.checkCampingLocation}
        filteredHiking = {this.checkHikingLocation}
         />
       {toggleCards}
