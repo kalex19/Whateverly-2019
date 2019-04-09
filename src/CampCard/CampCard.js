@@ -9,10 +9,10 @@ export default class CampCard extends Component {
 
   render () {
     return (
-      <section>
-        <h2>{ this.props.filteredCampgrounds.name }</h2>
-        <h3>{ this.props.filteredCampgrounds.location }</h3>
-        <h3>{ this.props.filteredCampgrounds.season }</h3>
+      <section className='campingCard'>
+        <h2 className='campName'>{ this.props.filteredCampgrounds.name }</h2>
+        <h3><span className='textLabel'>Location: </span>{ this.props.filteredCampgrounds.location }</h3>
+        <h3><span className='textLabel'>Available Seasons: </span>{ this.props.filteredCampgrounds.season }</h3>
     </section>
     )
   }

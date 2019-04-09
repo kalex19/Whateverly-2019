@@ -17,7 +17,7 @@ export default class Hiking extends Component {
       />)
     })
          return (
-          <div>{ Card }</div>
+          <section className='hikeCardContainer'>{ Card }</section>
          )
      }
 }
