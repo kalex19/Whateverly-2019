@@ -20,12 +20,14 @@ export default class CampFilterButtons extends Component {
       <section className='filterContainer'>
         <div className='campingFilters'>
           <div className='campingTypeFilter'>
-            <label>Camping Type</label>
+            <h4>Please pick one option for each category.</h4>
+            <label>Camping Type:</label>
             <button type='checkbox'>Tent</button>
             <button type='checkbox'>Car</button>
             <button type='checkbox'>RV</button>
           </div>
           <div className='elevationFilter'>
+            <label>Elevation:</label>
             <button>>5000 feet</button>
             <button>5000-8999 feet</button>
             <button>9000-11000 feet</button>
