@@ -2,7 +2,9 @@ import React, {Component} from 'react';
 import './App.scss';
 import Start from '../Start/Start.js';
 import Camping from '../Camping/Camping.js';
-import Hiking from '../Hiking/Hiking.js'
+import Hiking from '../Hiking/Hiking.js';
+import CampFilterButtons from '../ CampFilterButtons/CampFilterButtons.js';
+import HikeFilterButtons from '../ HikeFilterButtons/HikeFilterButtons.js';
 
 export default class App extends Component {
   constructor() {
@@ -80,6 +82,11 @@ export default class App extends Component {
   }
  
   render() {
+    if(this.state.hiking === true) {
+      <HikeFilterButtons 
+      filteredHiking = {this.state.filteredHiking} />
+    }
+
     let toggleCards;
 
     if(this.state.camping === true) {
@@ -110,6 +117,7 @@ export default class App extends Component {
        filteredCampgrounds = {this.checkCampingLocation}
        filteredHiking = {this.checkHikingLocation}
         />
+
       {toggleCards}
       </div>
 

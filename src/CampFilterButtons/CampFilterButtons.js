@@ -1,26 +1,21 @@
 import React, {Component} from 'react';
-import App from './App.js';
+import App from '../App/App.js';
+import Styles from './CampFilterButtons.scss';
 
-class FilterButtons extends App {
-  constructor() {
-    super();
+export default class CampFilterButtons extends Component {
+  constructor(props) {
+    super(props);
     //CAMPING
     //Reservations available
     //camping
     //season
     //activities
-    
-    //HIKING
-    //length
-    //elevation gain
-    //difficulty
-    //type
-
+  
     //methods:
     //display/filter cards
 
   }
-  render {
+  render() {
     return (
       <section className='filterContainer'>
         <div className='campingFilters'>
@@ -40,30 +35,8 @@ class FilterButtons extends App {
               <button>Yes</button>
               <button>No</button>
           </div>
-        </div>
-        <div className='hikingFilters'>
-          <div>
-          <label>Trail Type</label>
-            <button>Loop</button>
-            <button>Out and Back</button>
-            <button>Point-to-Point</button>
-          </div>
-          <div>
-            <label>Difficulty</label>
-            <button>Easy</button>
-            <button>Moderate</button>
-            <button>Difficult</button>
-          </div>
-          <div>
-            <label>Elevation Gain</label>
-              <button>>2000 feet</button>
-              <button>2000-4999 feet</button>
-              <button>5000-8000 feet</button>
-          </div>
-        </div>
+        </div>  
       </section>
     )
   }
 }
-
-export default FilterButton;
