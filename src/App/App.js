@@ -3,8 +3,8 @@ import './App.scss';
 import Start from '../Start/Start.js';
 import Camping from '../Camping/Camping.js';
 import Hiking from '../Hiking/Hiking.js';
-import CampFilterButtons from '../ CampFilterButtons/CampFilterButtons.js';
-import HikeFilterButtons from '../ HikeFilterButtons/HikeFilterButtons.js';
+import CampFilterButtons from '../CampFilterButtons/CampFilterButtons.js';
+import HikeFilterButtons from '../HikeFilterButtons/HikeFilterButtons.js';
 
 export default class App extends Component {
   constructor() {
@@ -17,7 +17,7 @@ export default class App extends Component {
       camping: false,
       hiking: false,
       filteredCampgrounds: [],
-      filteredHiking: []
+      filteredHiking: [],
     }
   }
 
@@ -82,12 +82,9 @@ export default class App extends Component {
   }
  
   render() {
-    if(this.state.hiking === true) {
-      <HikeFilterButtons 
-      filteredHiking = {this.state.filteredHiking} />
-    }
 
     let toggleCards;
+    let toggleFilter;
 
     if(this.state.camping === true) {
        toggleCards =  <Camping
@@ -96,6 +93,9 @@ export default class App extends Component {
         assignedUserCampInput = {this.state.userCampInputValue}
         filteredCampgrounds = {this.state.filteredCampgrounds}
    />
+        toggleFilter = <CampFilterButtons 
+        filteredHiking = {this.state.filteredCampgrounds} />
+
     } else if (this.state.hiking === true) {
         toggleCards = <Hiking
         allCampgrounds = {this.state.allCampgrounds}
@@ -103,6 +103,11 @@ export default class App extends Component {
         assignedUserHikeInput = {this.state.userHikeInputValue}
         filteredHiking = {this.state.filteredHiking}
     />
+      toggleFilter = <HikeFilterButtons 
+      filteredHiking = {this.state.filteredHiking} 
+      loop = {this.state.loop}
+      outBack = {this.state.outBack}
+      point = {this.state.point}/>
     }
 
     return (
@@ -119,6 +124,7 @@ export default class App extends Component {
         />
 
       {toggleCards}
+      {toggleFilter}
       </div>
 
     )
