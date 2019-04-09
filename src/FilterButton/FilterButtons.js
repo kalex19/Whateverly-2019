@@ -9,6 +9,7 @@ class FilterButtons extends App {
     //camping
     //season
     //activities
+    
     //HIKING
     //length
     //elevation gain
