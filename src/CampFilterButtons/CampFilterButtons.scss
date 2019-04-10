@@ -1,6 +1,46 @@
- .filterContainer {
-    margin: 5px;
-    display: grid;
-    grid-row-start: 2;
-    color: #fff;
+.filterContainer {
+  margin: 0px 5%;
+  display: grid;
+  grid-row-start: 2;
+  color: white;
+  background-color: rgba(63, 39, 46, 0.75);
+  font-weight: 600;
+  max-height: 900px;
+  padding: 10%;
+} 
+
+.formHeader {
+  margin-top: 0;
+  font-weight: 900;
+  font-size: 1.2em;
+  line-height: 30px;
+}
+
+.filterSection {
+  margin-top: 25%;
+}
+
+.filterBtn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 10%;
+}
+
+.filterBtn p {
+  margin: 0;
+}
+
+.filterSubmit, 
+  .resetSubmit {
+    margin: 15% 6%;
+    height: 60px;
+    width: 150px;
+    font-weight: 900;
+  }
+
+  .filterSubmit:hover,
+  .resetSubmit:hover {
+    color: white;
+    background-color: #af5700;
   }

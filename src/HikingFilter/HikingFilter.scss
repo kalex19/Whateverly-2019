@@ -1,7 +1,6 @@
 .hikeCardContainer{
     margin: 5px;
-    display: grid;
-    grid-template-columns: 25% 50% 25%;
+    display: block;
     grid-column-start: 2;
     grid-row-start: 2;
 }
