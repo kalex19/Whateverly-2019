@@ -5,7 +5,7 @@ import './Start.scss';
 export default class Start extends Component {
   constructor(props) {
     super(props);
-      this.state= {
+      this.state = {
         startInputValue: ''
       }
     }

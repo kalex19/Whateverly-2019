@@ -10,17 +10,20 @@ export default class HikeFilterButtons extends Component {
     }
 
     findLoop = (props) => {
-      let loopTrails = this.props.filteredHiking.filter(trail => trail['type'] === 'Loop')
+      let loopTrails = this.props.filteredHiking.filter(trail => trail['type'] === 'Loop');
+      this.props.filteredHikeResults(loopTrails);
       return loopTrails;
     }
 
     findOutBack = (props) => {
-      let outBackTrails = this.props.filteredHiking.filter(trail => trail['type'] === 'Out and back')
+      let outBackTrails = this.props.filteredHiking.filter(trail => trail['type'] === 'Out and Back');
+      this.props.filteredHikeResults(outBackTrails);
       return outBackTrails;
     }
 
     findPoint = (props) => {
-      let pointTrails = this.props.filteredHiking.filter(trail => trail['type'] === 'Point to Point')
+      let pointTrails = this.props.filteredHiking.filter(trail => trail['type'] === 'Point to Point');
+      this.props.filteredHikeResults(pointTrails);
       return pointTrails;
     }
 
