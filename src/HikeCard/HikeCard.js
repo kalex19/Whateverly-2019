@@ -44,11 +44,12 @@ export default class HikeCard extends Component {
         <div>
           <h2 className='hikeName'>{ this.props.filteredHiking.name }</h2>
           <button className='favoriteButton' onClick={this.handleFavoriteHikeButton}>Favorite</button>
-          <button className='vistedButton' onClick={this.handleVisitedTrails}>Visited</button>
+          <button className='visitedButton' onClick={this.handleVisitedTrails}>Visited</button>
           <button className='deleteButton' onClick={this.handleDeleteHikeCard}>Delete</button>
         </div>
-        <h3 className='textLabel'>{ this.props.filteredHiking.location }</h3>
-        <h3 className='textLabel'>{  this.props.filteredHiking.length } miles</h3>
+        <h3 className='textLabel'>Location: { this.props.filteredHiking.location }</h3>
+        <h3 className='textLabel'>Trail Length: {  this.props.filteredHiking.length } miles</h3>
+        <input className="moreBTn" type="button"value="More" onClick={this.createHikePopUp} />
     </section>
     )
   }
