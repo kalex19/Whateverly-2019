@@ -22,11 +22,11 @@ export default class HikeCard extends Component {
     })
   }
 
-  handleFavoriteHikeButton =(event) => {
+  handleFavoriteHikeButton = (event) => {
     //will have to save to component/LocalStorage  and toggle between favorite and not
     event.preventDefault();
     this.setState({
-      favorite: true
+      favorite: !this.state.favorite
     });
   }
 
@@ -34,7 +34,18 @@ export default class HikeCard extends Component {
     //will have to save to a component/Localstorage and toggle between visited and not
     event.preventDefault();
     this.setState({
-      visited: true
+      visited: !this.state.visited
+    })
+  }
+
+  componentDidUpdate = () => {
+    localStorage.setItem(this.props.filteredHiking.name, JSON.stringify(this.state));
+  }
+
+  componentDidMount = () => {
+    this.setState({
+      favorite: JSON.parse(localStorage.getItem(this.props.filteredHiking.name)) || false,
+      visited: JSON.parse(localStorage.getItem(this.props.filteredHiking.name)) || false
     })
   }
 
@@ -43,9 +54,9 @@ export default class HikeCard extends Component {
       <section className='hikingCard'>
         <div>
           <h2 className='hikeName'>{ this.props.filteredHiking.name }</h2>
-          <button className='favoriteButton' onClick={this.handleFavoriteHikeButton}>Favorite</button>
-          <button className='visitedButton' onClick={this.handleVisitedTrails}>Visited</button>
-          <button className='deleteButton' onClick={this.handleDeleteHikeCard}>Delete</button>
+          <button className='favoriteButton' onClick={this.handleFavoriteHikeButton}><i className="fas fa-heart"></i></button>
+          <button className='visitedButton' onClick={this.handleVisitedTrails}><i className="fas fa-check"></i></button>
+          <button className='deleteButton' onClick={this.handleDeleteHikeCard}><i className="far fa-trash-alt"></i></button>
         </div>
         <h3 className='textLabel'>Location: { this.props.filteredHiking.location }</h3>
         <h3 className='textLabel'>Trail Length: {  this.props.filteredHiking.length } miles</h3>
