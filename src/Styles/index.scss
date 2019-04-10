@@ -1,3 +1,17 @@
+@import 'normalize';
+@import 'variables.scss';
+@import './App/app.scss';
+@import './CampCard/campCard.scss';
+@import './CampFilterButtons/campFilterButtons.scss';
+@import './CampingFilter/campingFilter.scss';
+@import './CampPopUpCard/campPopUpCard.scss';
+@import './HikeCard/hikeCard.scss';
+@import './HikeFilterButtons/hikeFilterButtons.scss';
+@import './HikePopUpCard/hikePopUpCard.scss';
+@import './HikingFilter/hikingFilter.scss';
+@import './Start/start.scss';
+@import './StorageButtons/storageButtons.scss';
+
 * {
     box-sizing: border-box;
 }
