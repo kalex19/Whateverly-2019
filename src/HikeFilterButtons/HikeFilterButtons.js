@@ -26,56 +26,49 @@ export default class HikeFilterButtons extends Component {
     }
 
     findOutBack = () => {
-      this.setState({
-        outBack: !this.state.outBack
-      });
+      let outBackTrails = this.props.filteredHiking.filter(trail => trail['type'] === 'Out and back')
+      return outBackTrails;
     }
 
     findPoint = () => {
-      this.setState({
-        point: !this.state.point
-      });
+      let pointTrails = this.props.filteredHiking.filter(trail => trail['type'] === 'Point to Point')
+      return pointTrails;
     }
 
     isEasy = () => {
-      this.setState({
-        easy: !this.state.easy
-      });
+      let easyTrails = this.props.filteredHiking.filter(trail => trail['difficulty'] === 'Easy')
+      return easyTrails;
     }
 
     isMod = () => {
-      this.setState({
-        mod: !this.state.mod
-      });
+      let modTrails = this.props.filteredHiking.filter(trail => trail['difficulty'] === 'Moderate')
+      return modTrails;
     }
 
     isDiff = () => {
-      this.setState({
-        diff: !this.state.diff
-      });
+      let diffTrails = this.props.filteredHiking.filter(trail => trail['difficulty'] === 'Difficult')
+      return diffTrails;
     }
 
     isLess2000 = () => {
-      this.setState({
-        less2000: !this.state.less2000
-      });
+      let less2000Trails = this.props.filteredHiking.filter(trail => trail['elevation-gain'] >= 1999)
+      return less2000Trails;
     }
 
     isLess5000 = () => {
-      this.setState({
-        less5000: !this.state.less5000
-      });
+      let less5000Trails = this.props.filteredHiking.filter(trail => trail['elevation-gain'] >= 2000 && trail['elevation-gain']<= 4999)
+      return less5000Trails;
     }
 
     isLess8000 = () => {
-      this.setState({
-        less8000: !this.state.less8000
-      });
+      let less8000Trails = this.props.filteredHiking.filter(trail => trail['elevation-gain'] >= 5000 && trail['elevation-gain']<= 8000)
+      return less8000Trails;
     }
 
   render() {
     return (
       <section className='filterContainer'>
+      <form>
         <h4>Please pick one option for each category.</h4>
           <div>
           <label>Trail Type:</label>
@@ -91,11 +84,13 @@ export default class HikeFilterButtons extends Component {
           </div>
           <div>
             <label>Elevation Gain:</label>
-              <input type="radio" name="gain" value="less2000" onChange={this.isLess2000}/><p>0-2000 feet</p>
+              <input type="radio" name="gain" value="less2000" onChange={this.isLess2000}/><p>0-1999 feet</p>
               <input type="radio" name="gain" value="less5000" onChange={this.isLess5000}/><p>2000-4999 feet</p>
               <input type="radio" name="gain" value="less8000" onChange={this.isLess8000}/><p>5000-8000 feet</p>
           </div>
           <input type="submit" className="filterSubmit" onClick={this.filter}/>
+          <input type="reset" value="Reset" className="resetSubmit" onClick={this.reset}/>
+          </form>
       </section>
     )
   }
