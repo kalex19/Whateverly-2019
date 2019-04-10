@@ -1,15 +1,33 @@
 .hikingCard{
-    border: #3e272f solid 2px;
-    font-size: 15px;
+    display: inline-grid;
+    border: #3e272f solid 4px;
+    font-size: 1em;
     color: #3e272f;
-    background-color: white;
+    background-color: rgba(349, 250, 255, 0.90);
     grid-column-start: 2;
     margin: 3% 18%;
-    padding: 5px;
-    max-height: 250px;
+    padding: 7px;
+    max-height: 300px;
     width: 70%;
 }
 
 .hikeName {
     border-bottom: 2px solid #3e272f;
+    font-weight: 500;
+} 
+.favoriteButton,
+.visitedButton,
+.deleteButton {
+    display: inline;
+    margin: 0 10%;
+    height: 35px;
+    width: 13%;
+}
+
+.favoriteButton:hover,
+.visitedButton:hover,
+.deleteButton:hover,
+.moreBtn:hover {
+    color: white;
+    background-color: #af5700; 
 }
