@@ -71,23 +71,40 @@ export default class CampFilterButtons extends Component {
     return (
       <section className='filterContainer'>
         <form>
-          <h4>Please pick one option for each category.</h4>
-            <div className='campingTypeFilter'>
+          <h4 className="formHeader">Please pick one option for each category.</h4>
+            <div className='filterSection'>
               <label>Camping Type:</label>
+              <div className="filterBtn">
               <p>Tent</p><input type="radio" name="type" value="tent" onChange={this.allowsTents}/>
+              </div>
+              <div className="filterBtn">
               <p>Car</p><input type="radio" name="type" value="car" onChange={this.allowsCars}/>
+              </div>
+              <div
+              className="filterBtn">
               <p>RV</p><input type="radio" name="type" value="rv" onChange={this.allowsRVs}/>
+              </div>
             </div>
-            <div className='elevationFilter'>
+            <div className='filterSection'>
               <label>Elevation:</label>
+              <div className="filterBtn">
               <p>5000 feet</p><input type="radio" name="elevation" value="less5000" onChange={this.isLess5000}/>
+              </div>
+              <div className="filterBtn">
               <p>5000-8999 feet</p><input type="radio" name="elevation" value="less9000" onChange={this.isLess9000}/>
+              </div>
+              <div className="filterBtn">
               <p>9000-11000 feet</p><input type="radio" name="elevation" value="less11000" onChange={this.isLess11000}/>
+              </div>
             </div>
-            <div className='reservationFilter'>
+            <div className='filterSection'>
               <label>Take a reservation:</label>
+              <div className="filterBtn">
                 <p>Yes</p><input type="radio" name="reservation" value="Yes" onChange={this.yesRes}/>
+                </div>
+                <div className="filterBtn">
                 <p>No</p><input type="radio" name="reservation" value="No" onChange={this.noRes}/>
+                </div>
             </div>
           <input type="submit" className="filterSubmit" onClick={this.filter}/>
           <input type="reset" value="Reset" className="resetSubmit" onClick={this.reset}/>

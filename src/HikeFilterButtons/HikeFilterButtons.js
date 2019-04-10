@@ -58,24 +58,42 @@ export default class HikeFilterButtons extends Component {
     return (
       <section className='filterContainer'>
       <form>
-        <h4>Please pick one option for each category.</h4>
-          <div>
+        <h4 className="formHeader">Please pick one option for each category.</h4>
+          <div className="filterSection">
           <label>Trail Type:</label>
+          <div className="filterBtn">
             <p>Loop</p><input type="radio" name="type" value="loop" onChange={this.findLoop}/>
+          </div>
+          <div className="filterBtn">
             <p>Out and Back</p><input type="radio" name="type" value="outBack" onChange={this.findOutBack}/>
+          </div>
+          <div className="filterBtn">
             <p>Point-to-Point</p><input type="radio" name="type" value="point" onChange={this.findPoint}/>
           </div>
-          <div>
-            <label>Difficulty:</label>
-            <p>Easy</p><input type="radio" name="difficulty" value="easy" onChange={this.isEasy}/>
-            <p>Moderate</p><input type="radio" name="difficulty" value="mod" onChange={this.isMod}/>
-            <p>Difficult</p><input type="radio" name="difficulty" value="diff" onChange={this.isDiff}/>
           </div>
-          <div>
+          <div className="filterSection">
+            <label>Difficulty:</label>
+            <div className="filterBtn">
+            <p>Easy</p><input type="radio" name="difficulty" value="easy" onChange={this.isEasy}/>
+            </div>
+            <div className="filterBtn">
+            <p>Moderate</p><input type="radio" name="difficulty" value="mod" onChange={this.isMod}/>
+            </div>
+            <div className="filterBtn">
+            <p>Difficult</p><input type="radio" name="difficulty" value="diff" onChange={this.isDiff}/>
+            </div>
+          </div>
+          <div className="filterSection">
             <label>Elevation Gain:</label>
+            <div className="filterBtn">
               <p>0-1999 feet</p><input type="radio" name="gain" value="less2000" onChange={this.isLess2000}/>
+              </div>
+              <div className="filterBtn">
               <p>2000-4999 feet</p><input type="radio" name="gain" value="less5000" onChange={this.isLess5000}/>
+              </div>
+              <div className="filterBtn">
               <p>5000-8000 feet</p><input type="radio" name="gain" value="less8000" onChange={this.isLess8000}/>
+              </div>
           </div>
           <input type="submit" className="filterSubmit" onClick={this.filter}/>
           <input type="reset" value="Reset" className="resetSubmit" onClick={this.reset}/>
