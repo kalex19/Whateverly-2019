@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './Hiking.scss';
+import './HikingFilter.scss';
 import HikeCard from '../HikeCard/HikeCard.js';
 
 export default class Hiking extends Component {

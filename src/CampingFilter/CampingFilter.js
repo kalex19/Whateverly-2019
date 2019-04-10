@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './Camping.scss';
+import './CampingFilter.scss';
 import CampCard from '../CampCard/CampCard.js';
 
 export default class Camping extends Component {
@@ -13,6 +13,8 @@ export default class Camping extends Component {
       return (<CampCard 
         filteredCampgrounds = {campground}
         key = {campground.name}
+        allTrails = {this.props.allTrails}
+        assignedUserCampInput = {this.props.userCampInputValue}
       />)
 
     })

@@ -19,6 +19,7 @@ export default class CampFilterButtons extends Component {
   allowsCars = (props) => {
     let carCamp = this.props.filteredCampgrounds.filter(campground => campground.camping.includes("Car"))
     this.state.updateFilter.push(carCamp);
+    console.log('cars', this.state.updateFilter);
     return carCamp;
   }
 
@@ -58,10 +59,12 @@ export default class CampFilterButtons extends Component {
     this.state.updateFilter.push(no);
     return no;
   }
-
+//Arrays go together, need to filter out those that meet all three requirements and return unique cards
   filter = (event) => {
     event.preventDefault();
-    console.log('HI', this.state.updateFilter);
+      let newFilteredCampgrounds = this.state.updateFilter[0].concat(this.state.updateFilter[1]).concat(this.state.updateFilter[2]);
+      console.log('update filter', this.state.updateFilter)
+ 
   }
 
   render() {
