@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './HikeCard.scss';
-import Hiking from '../Hiking/Hiking.js';
+import HikingFilter from '../HikingFilter/HikingFilter.js';
 
 export default class HikeCard extends Component {
   constructor(props) {
