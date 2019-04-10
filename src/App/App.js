@@ -55,7 +55,6 @@ export default class App extends Component {
   }
 
   checkHikingLocation = (userHikeInputValue) => {
-    console.log('User Input Hike', userHikeInputValue);
     let filteredHiking = this.state.allTrails.filter(trail => trail.location === userHikeInputValue || trail["nearest-city"] === userHikeInputValue)
     this.setState ({
       filteredHiking: filteredHiking
@@ -94,7 +93,7 @@ export default class App extends Component {
         filteredCampgrounds = {this.state.filteredCampgrounds}
    />
         toggleFilter = <CampFilterButtons 
-        filteredHiking = {this.state.filteredCampgrounds} />
+        filteredCampgrounds = {this.state.filteredCampgrounds} />
 
     } else if (this.state.hiking === true) {
         toggleCards = <Hiking
@@ -104,10 +103,7 @@ export default class App extends Component {
         filteredHiking = {this.state.filteredHiking}
     />
       toggleFilter = <HikeFilterButtons 
-      filteredHiking = {this.state.filteredHiking} 
-      loop = {this.state.loop}
-      outBack = {this.state.outBack}
-      point = {this.state.point}/>
+      filteredHiking = {this.state.filteredHiking} />
     }
 
     return (
