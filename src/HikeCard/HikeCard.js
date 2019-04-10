@@ -25,7 +25,6 @@ export default class HikeCard extends Component {
   handleFavoriteHikeButton =(event) => {
     //will have to save to component/LocalStorage  and toggle between favorite and not
     event.preventDefault();
-    console.log('sup Katie');
     this.setState({
       favorite: true
     });
@@ -34,7 +33,6 @@ export default class HikeCard extends Component {
   handleVisitedTrails = (event) => {
     //will have to save to a component/Localstorage and toggle between visited and not
     event.preventDefault();
-    console.log('sup em!');
     this.setState({
       visited: true
     })
