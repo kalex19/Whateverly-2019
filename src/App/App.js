@@ -41,6 +41,21 @@ export default class App extends Component {
         .catch(error => console.log('Hiking Error', error)); 	 
    }
 
+   filteredCampResults = (filteredCampResults) => {
+    this.setState({
+      filteredCampgrounds: filteredCampResults
+    })
+    this.assignCampingBoolean(filteredCampResults);
+   }
+
+    filteredHikeResults = (filteredHikeResults) => {
+    this.setState({
+      filteredHiking: filteredHikeResults
+    })
+    this.assignHikingBoolean(filteredHikeResults);
+   }
+
+
    assignCampingBoolean = () => {
     this.setState({
       camping: true
@@ -91,9 +106,11 @@ export default class App extends Component {
         allTrails = {this.state.allTrails} 
         assignedUserCampInput = {this.state.userCampInputValue}
         filteredCampgrounds = {this.state.filteredCampgrounds}
+
    />
         toggleFilter = <CampFilterButtons 
-        filteredCampgrounds = {this.state.filteredCampgrounds} />
+        filteredCampgrounds = {this.state.filteredCampgrounds}
+          filteredCampResults = {this.filteredCampResults} />
 
     } else if (this.state.hiking === true) {
         toggleCards = <HikingFilter
@@ -103,7 +120,8 @@ export default class App extends Component {
         filteredHiking = {this.state.filteredHiking}
     />
       toggleFilter = <HikeFilterButtons 
-      filteredHiking = {this.state.filteredHiking} />
+      filteredHiking = {this.state.filteredHiking}
+        filteredHikeResults = {this.filteredHikeResults} />
     }
 
     return (

@@ -6,26 +6,27 @@ export default class CampFilterButtons extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      updateFilter: []
     }
   }
 
   allowsTents = (props) => {
     let tentCamp = this.props.filteredCampgrounds.filter(campground => campground.camping.includes("Tent"))
-    this.state.updateFilter.push(...tentCamp);
+    this.props.filteredCampResults(tentCamp);
+    console.log('tentCamp', tentCamp)
     return tentCamp;
   }
 
   allowsCars = (props) => {
     let carCamp = this.props.filteredCampgrounds.filter(campground => campground.camping.includes("Car"))
-    this.state.updateFilter.push(...carCamp);
-    console.log('cars', this.state.updateFilter);
+    console.log('carsCamp', carCamp)
+    this.props.filteredCampResults(carCamp);
     return carCamp;
   }
 
   allowsRVs = (props) => {
     let rvCamp = this.props.filteredCampgrounds.filter(campground => campground.camping.includes("RV"))
-    this.state.updateFilter.push(...rvCamp);
+       console.log('rvCamp', rvCamp)
+    this.props.filteredCampResults(rvCamp);
     return rvCamp;
   }
 
@@ -62,7 +63,6 @@ export default class CampFilterButtons extends Component {
 
   filter = (event) => {
     event.preventDefault();
-      let newFilteredCampgrounds = this.state.updateFilter[0].concat(this.state.updateFilter[1]).concat(this.state.updateFilter[2]);
   }
 
 
