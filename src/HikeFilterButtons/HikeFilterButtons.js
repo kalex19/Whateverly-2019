@@ -8,9 +8,7 @@ export default class HikeFilterButtons extends Component {
       this.state = {
       }
     }
-
   
-   
     findLoop = (props) => {
       let loopTrails = this.props.filteredHiking.filter(trail => trail['type'] === 'Loop');
       this.props.filteredHikeResults(loopTrails);

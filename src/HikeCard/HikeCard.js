@@ -43,7 +43,7 @@ export default class HikeCard extends Component {
       visited: JSON.parse(localStorage.getItem(this.props.filteredHiking.name)) || false
     })
   }
-
+ 
   render () {
     let HikePopUp;
     if(this.state.popUp === true) {

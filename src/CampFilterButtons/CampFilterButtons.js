@@ -89,10 +89,6 @@ export default class CampFilterButtons extends Component {
     })
   }
 
-  //need to target value of the filter buttons not the submit button
-  //need to dynamically get the right data attribute not just campground
-  //don't know what will happen once this works - get right cards??
-
   render() {
     return (
       <section className='filterContainer'>
