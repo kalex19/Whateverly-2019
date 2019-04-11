@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StorageButton should mock the snapshot 1`] = `
+<section>
+  <input
+    type="button"
+    value="Favorite"
+  />
+  <input
+    type="button"
+    value="Visited"
+  />
+  <input
+    type="button"
+    value="Reset"
+  />
+</section>
+`;

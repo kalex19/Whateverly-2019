@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import StorageButtons from '../StorageButtons.js';
+import StorageButtons from '../StorageButtons/StorageButtons.js';
 import { shallow } from 'enzyme';
 
 const mockCamping = [
@@ -30,13 +30,17 @@ describe('StorageButton', () => {
 let wrapper 
 
 beforeEach(() => {
-    wrapper.shallow(
+    wrapper = shallow(
         <StorageButtons />
     )
 });
 
 it('should mock the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
+});
+
+it('should contain 3 buttons', () => {
+    expect(wrapper.find("input").length).toBe(3)
 });
 
 })
