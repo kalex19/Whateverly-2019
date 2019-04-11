@@ -18,7 +18,6 @@ export default class CampCard extends Component {
     this.setState({
       popUp: true
     })
-    console.log(this.state);
   }
 
   handleDeleteCampCard = (e) => {

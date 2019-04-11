@@ -17,20 +17,17 @@ export default class CampFilterButtons extends Component {
   allowsTents = (props) => {
     let tentCamp = this.props.filteredCampgrounds.filter(campground => campground.camping.includes("Tent"))
     this.props.filteredCampResults(tentCamp);
-    console.log('tentCamp', tentCamp)
     return tentCamp;
   }
 
   allowsCars = (props) => {
     let carCamp = this.props.filteredCampgrounds.filter(campground => campground.camping.includes("Car"))
-    console.log('carsCamp', carCamp)
     this.props.filteredCampResults(carCamp);
     return carCamp;
   }
 
   allowsRVs = (props) => {
     let rvCamp = this.props.filteredCampgrounds.filter(campground => campground.camping.includes("RV"))
-       console.log('rvCamp', rvCamp)
     this.props.filteredCampResults(rvCamp);
     return rvCamp;
   }
@@ -56,7 +53,6 @@ export default class CampFilterButtons extends Component {
   yesRes = (props) => {
     let yes = this.props.filteredCampgrounds.filter(campground => campground['reservation-available'] === true)
     this.state.updateFilter.push(...yes);
-    console.log('yes', this.state.updateFilter);
     return yes;
   }
 

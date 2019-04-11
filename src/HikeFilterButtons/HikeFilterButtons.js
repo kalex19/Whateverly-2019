@@ -19,7 +19,6 @@ export default class HikeFilterButtons extends Component {
     e.preventDefault()
     const filters = Object.assign({}, this.state.filters);
     let filterType = filters.type = e.target.value;
-    console.log("filter type", this.filterType);
     this.setState({ filters: filters })
   }
 
