@@ -69,6 +69,11 @@ export default class CampCard extends Component {
         </div>
         <h3><span className='textLabel'>Location: </span>{ this.props.filteredCampgrounds.location }</h3>
         <h3><span className='textLabel'>Available Seasons: </span>{ this.props.filteredCampgrounds.season }</h3>
+        <ul className='campInfo'>
+          <li><span className='textLabel'>Elevation: </span>{this.props.filteredCampgrounds.elevation}</li>
+          <li><span className='textLabel'>Camping Type: </span>{this.props.filteredCampgrounds.camping}</li>
+          <li><span className='textLabel'>Nearby Activities: </span>{this.props.filteredCampgrounds.activities}</li>
+        </ul>
         <input className="moreBTn" type="button"value="More" onClick={this.createCampPopUp} />
         {campPopUp}
     </section>

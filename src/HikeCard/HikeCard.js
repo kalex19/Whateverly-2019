@@ -54,6 +54,11 @@ export default class HikeCard extends Component {
         </div>
         <h3 className='textLabel'>Location: { this.props.filteredHiking.location }</h3>
         <h3 className='textLabel'>Trail Length: {  this.props.filteredHiking.length } miles</h3>
+        <ul className='hikeInfo'>
+          <li><span className='textLabel'>Elevation Gain: </span>{this.props.filteredHiking['elevation-gain']} feet</li>
+          <li><span className='textLabel'>Trail Type: </span>{this.props.filteredHiking.type}</li>
+          <li><span className='textLabel'>Difficulty: </span>{this.props.filteredHiking.difficulty}</li>
+        </ul>
         <input className="moreBTn" type="button"value="More" onClick={this.createHikePopUp} />
     </section>
     )
