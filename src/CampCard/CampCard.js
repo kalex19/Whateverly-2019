@@ -10,7 +10,7 @@ export default class CampCard extends Component {
     this.state = {
       favorite: false,
       visited: false,
-      deleted: false,
+      // deleted: false,
       popUp: false
     }
   }
@@ -21,17 +21,14 @@ export default class CampCard extends Component {
     console.log(this.state);
   }
 
-  handleDeleteCampCard() {
-    //create another method that will have the logic to delete the card
-    //potentially have on the app and parse down
-    //if this button is clicked remove from localStorage/component that holds it in local storage and remove with that component 
-    this.setState({
-      deleted: true
-    })
+  handleDeleteCampCard = (event, props) => {
+    event.preventDefault();
+    console.log('filtered', this.props.filteredCampgrounds);
+    // console.log(delete this.props.filteredCampgrounds);
+    
   }
 
   handleFavoriteCamp = (event) => {
-    //will have to save to component/LocalStorage  and toggle between favorite and not
     event.preventDefault();
     this.setState({
       favorite: !this.state.favorite
@@ -39,7 +36,6 @@ export default class CampCard extends Component {
   }
 
   handleVisitedCamp = (event) => {
-    //will have to save to a component/Localstorage and toggle between visited and not
     event.preventDefault();
     this.setState({
       visited: !this.state.visited
@@ -48,12 +44,14 @@ export default class CampCard extends Component {
 
   componentDidUpdate = () => {
     localStorage.setItem(this.props.filteredCampgrounds.name, JSON.stringify(this.state));
+    // deleted: JSON.parse(localStorage.getItem(this.props.filteredCampgrounds.name)) || false
+
   }
 
   componentDidMount = () => {
     this.setState({
       favorite: JSON.parse(localStorage.getItem(this.props.filteredCampgrounds.name)) || false,
-      visited: JSON.parse(localStorage.getItem(this.props.filteredCampgrounds.name)) || false
+      visited: JSON.parse(localStorage.getItem(this.props.filteredCampgrounds.name)) || false,
     })
   }
   render (props) {
