@@ -17,12 +17,11 @@ export default class CampCard extends Component {
     this.setState({
       popUp: true
     })
-    console.log(this.state);
   }
 
   handleDeleteCampCard = (e) => {
     e.preventDefault();
-    e.target.closest('section').remove(); 
+    e.target.closest('section').remove();
   }
 
   handleFavoriteCamp = (event) => {
@@ -41,7 +40,6 @@ export default class CampCard extends Component {
 
   componentDidUpdate = () => {
     localStorage.setItem(this.props.filteredCampgrounds.name, JSON.stringify(this.state));
-
   }
 
   componentDidMount = () => {
@@ -50,6 +48,7 @@ export default class CampCard extends Component {
       visited: JSON.parse(localStorage.getItem(this.props.filteredCampgrounds.name)) || false,
     })
   }
+
   render (props) {
     let campPopUp;
     if(this.state.popUp === true) {
@@ -57,21 +56,20 @@ export default class CampCard extends Component {
       allTrails = {this.props.allTrails}
       assignedUserCampInput = {this.props.userCampInputValue} />
     }
-
-
+    
     return (
       <section className='campingCard'>
-        <div>
-          <h2 className='campName'>{ this.props.filteredCampgrounds.name }</h2>
-          <button className='favoriteButton' onClick={this.handleFavoriteCamp}>  <i className="fas fa-heart"></i></button>
-          <button className='visitedButton' onClick={this.handleVisitedCamp}> <i className="fas fa-check"></i></button>
-          <button className='deleteButton' onClick={this.handleDeleteCampCard}><i className="far fa-trash-alt"></i></button>
-        </div>
-        <h3><span className='textLabel'>Location: </span>{ this.props.filteredCampgrounds.location }</h3>
-        <h3><span className='textLabel'>Available Seasons: </span>{ this.props.filteredCampgrounds.season }</h3>
-        <input className="moreBTn" type="button"value="More" onClick={this.createCampPopUp} />
-        {campPopUp}
-    </section>
-    )
+      <div>
+      <h2 className='campName'>{ this.props.filteredCampgrounds.name }</h2>
+      <button className='favoriteButton' onClick={this.handleFavoriteCamp}><i className={this.state.favorite ? "far fa-heart" : "fas fa-heart"}></i></button>
+      <button className='visitedButton' onClick={this.handleVisitedCamp}> <i className={this.state.visited ? "far fa-check-square" : "fas fa-check-square"}></i></button>
+      <button className='deleteButton' onClick={this.handleDeleteCampCard}><i className="far fa-trash-alt"></i></button>
+      </div>
+      <h3><span className='textLabel'>Location: </span>{ this.props.filteredCampgrounds.location }</h3>
+      <h3><span className='textLabel'>Available Seasons: </span>{ this.props.filteredCampgrounds.season }</h3>
+      <input className="moreBTn" type="button"value="More" onClick={this.createCampPopUp} />
+      {campPopUp}
+      </section>
+      )
+    }
   }
-}

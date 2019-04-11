@@ -5,31 +5,30 @@ import './Start.scss';
 export default class Start extends Component {
   constructor(props) {
     super(props);
-      this.state = {
-        startInputValue: ''
-      }
+    this.state = {
+      startInputValue: ''
     }
+  }
 
-    handleChange = (event) => {
-      event.preventDefault();
-      this.setState({
-        startInputValue: event.target.value
-      }) 
-    }
+  handleChange = (event) => {
+    event.preventDefault();
+    this.setState({
+      startInputValue: event.target.value
+    }) 
+  }
 
-    handleClickCampingBtn = (props) => {
-      this.props.userCampInput(this.state.startInputValue);
-      this.props.filteredCampgrounds(this.state.startInputValue);
-      this.props.campingBoolean();
-    }
+  handleClickCampingBtn = (props) => {
+    this.props.userCampInput(this.state.startInputValue);
+    this.props.filteredCampgrounds(this.state.startInputValue);
+    this.props.campingBoolean();
+  }
 
-    handleClickHikingBtn = (props) => {
-      this.props.userHikeInput(this.state.startInputValue);
-      this.props.filteredHiking(this.state.startInputValue);
-      this.props.hikingBoolean();
-    }
+  handleClickHikingBtn = (props) => {
+    this.props.userHikeInput(this.state.startInputValue);
+    this.props.filteredHiking(this.state.startInputValue);
+    this.props.hikingBoolean();
+  }
 
-  
   render () {
     return (
       <section className='startWrapper'>
@@ -37,13 +36,13 @@ export default class Start extends Component {
         <section className='startLocationSearch'>
           <input type="text" className="startLocationInput" placeholder="Please Enter a Location..." value= {this.state.startInputValue} onChange={this.handleChange} />
           <div className='buttonHolder'>
-          <input type="button" className="campStartBtn"  value='Camping' onClick={this.handleClickCampingBtn}  />
-          <input type="button" className="hikeStartBtn" value='Hiking' onClick={this.handleClickHikingBtn} />
-        </div>
+            <input type="button" className="campStartBtn"  value='Camping' onClick={this.handleClickCampingBtn}  />
+            <input type="button" className="hikeStartBtn" value='Hiking' onClick={this.handleClickHikingBtn} />
+           </div>
         </section>
       </section>
-    )
+      )
+    }
   }
-}
 
 
