@@ -13,6 +13,7 @@ export default class CampCard extends Component {
       popUp: false
     }
   }
+
   createCampPopUp = () => {
     this.setState({
       popUp: true

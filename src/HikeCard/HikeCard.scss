@@ -15,6 +15,12 @@
     border-bottom: 2px solid #3e272f;
     font-weight: 500;
 } 
+
+.hikeInfo {
+    display: inline;
+    columns: 2;
+}
+
 .favoriteButton,
 .visitedButton,
 .deleteButton {

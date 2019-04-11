@@ -21,6 +21,11 @@
     font-weight: 500;
 }
 
+.campInfo{
+    display: inline;
+    columns: 2;
+}
+
 .favoriteButton,
 .visitedButton,
 .deleteButton {
@@ -41,3 +46,4 @@
     background-color: #af5700; 
     color: white;
 }
+
