@@ -8,7 +8,7 @@ export default class HikeFilterButtons extends Component {
       this.state = {
       }
     }
-  
+
     findLoop = (props) => {
       let loopTrails = this.props.filteredHiking.filter(trail => trail['type'] === 'Loop');
       this.props.filteredHikeResults(loopTrails);
@@ -63,14 +63,13 @@ export default class HikeFilterButtons extends Component {
       return less8000Trails;
    }
 
-    filter = (event) => {
+  filter = (event) => {
     event.preventDefault();
   }
 
-   reset = (event) => {
+  reset = (event) => {
     event.preventDefault();
   }
-
 
   render() {
     return (
