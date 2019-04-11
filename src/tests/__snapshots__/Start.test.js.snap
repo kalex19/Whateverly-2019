@@ -1,3 +1,120 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Start should match snapsho 1`] = `
+<section
+  className="startWrapper"
+>
+  <h1
+    className="header"
+  >
+    XCO
+  </h1>
+  <section
+    className="startLocationSearch"
+  >
+    <input
+      className="startLocationInput"
+      onChange={[Function]}
+      placeholder="Please Enter a Location..."
+      type="text"
+      value=""
+    />
+    <div
+      className="buttonHolder"
+    >
+      <input
+        className="campStartBtn"
+        onClick={[Function]}
+        type="button"
+        value="Camping"
+      />
+      <input
+        className="hikeStartBtn"
+        onClick={[Function]}
+        type="button"
+        value="Hiking"
+      />
+    </div>
+  </section>
+</section>
+`;
+
+exports[`Start should match snapshop 1`] = `
+<section
+  className="startWrapper"
+>
+  <h1
+    className="header"
+  >
+    XCO
+  </h1>
+  <section
+    className="startLocationSearch"
+  >
+    <input
+      className="startLocationInput"
+      onChange={[Function]}
+      placeholder="Please Enter a Location..."
+      type="text"
+      value=""
+    />
+    <div
+      className="buttonHolder"
+    >
+      <input
+        className="campStartBtn"
+        onClick={[Function]}
+        type="button"
+        value="Camping"
+      />
+      <input
+        className="hikeStartBtn"
+        onClick={[Function]}
+        type="button"
+        value="Hiking"
+      />
+    </div>
+  </section>
+</section>
+`;
+
+exports[`Start should match snapshot 1`] = `
+<section
+  className="startWrapper"
+>
+  <h1
+    className="header"
+  >
+    XCO
+  </h1>
+  <section
+    className="startLocationSearch"
+  >
+    <input
+      className="startLocationInput"
+      onChange={[Function]}
+      placeholder="Please Enter a Location..."
+      type="text"
+      value=""
+    />
+    <div
+      className="buttonHolder"
+    >
+      <input
+        className="campStartBtn"
+        onClick={[Function]}
+        type="button"
+        value="Camping"
+      />
+      <input
+        className="hikeStartBtn"
+        onClick={[Function]}
+        type="button"
+        value="Hiking"
+      />
+    </div>
+  </section>
+</section>
+`;
+
 exports[`Start should mock snapshot 1`] = `undefined`;
