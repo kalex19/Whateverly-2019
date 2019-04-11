@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Card from '../Card.js';
+import CampCard from '../CampCard/CampCard.js';
 import { shallow } from 'enzyme';
 
 const mockCamping = [
@@ -26,17 +26,25 @@ const mockCamping = [
     }
 ]
 
-describe('Card', () => {
+describe('CampCard', () => {
 let wrapper
 
 beforeEach(() => {
-    wrapper.shallow(
-        <Card />
+    wrapper = shallow(
+        <CampCard filteredCampgrounds={mockCamping} />
     )
 });
 
-it('should mock the snapshot', () => {
-    expect(wrappper).toMatchSnapshot();
+// it('should mock the snapshot', () => {
+//     expect(wrapper).toMatchSnapshot({mockCamping});
+// });
+
+it('should have a default state', () => {
+    expect(wrapper.state()).toEqual({
+        favorite: false,
+        visited: false,
+        popUp: false
+    })
 });
 
 })

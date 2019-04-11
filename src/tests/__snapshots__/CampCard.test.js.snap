@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CampCard should mock the snapshot 1`] = `undefined`;
+
+exports[`Card should mock the snapshot 1`] = `undefined`;

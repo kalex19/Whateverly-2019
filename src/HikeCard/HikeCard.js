@@ -8,7 +8,6 @@ export default class HikeCard extends Component {
     this.state = {
       favorite: false,
       visited: false,
-      deleted: false
     }
 
   }
