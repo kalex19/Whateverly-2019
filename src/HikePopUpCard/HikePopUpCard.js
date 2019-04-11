@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import HikeCard from '../HikeCard/HikeCard.js';
-import HikePopUpCard from './HikePopUpCard/scss';
+import './HikePopUpCards/HikePopUpCards.scss';
 
 export default class HikePopUpCard extends Component {
   constructor() {
@@ -23,7 +23,7 @@ export default class HikePopUpCard extends Component {
     
   }
 
-  render {
+  render () {
     return (
       <section className='campingCard'>
         <div>

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import App from './App.js';
+import App from '../App/App.js';
 
-class StorageButtons extends App {
+export default class HikePopUpCard extends Component  {
   constructor() {
     super();
     
@@ -19,7 +19,7 @@ class StorageButtons extends App {
     //method:
     //reset buttons in input fields
   }
-  render {
+  render () {
     return (
       <section>
         <input type='button' value='Favorite' />
@@ -34,5 +34,3 @@ class StorageButtons extends App {
     )
   }
 }
-
-export default StorageButton;
