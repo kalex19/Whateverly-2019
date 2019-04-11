@@ -60,12 +60,13 @@ export default class CampCard extends Component {
     
     return (
       <section className='campingCard'>
-      <div>
-      <h2 className='campName'>{ this.props.filteredCampgrounds.name }</h2>
-      <button className='favoriteButton' onClick={this.handleFavoriteCamp}><i className={this.state.favorite ? "far fa-heart" : "fas fa-heart"}></i></button>
-      <button className='visitedButton' onClick={this.handleVisitedCamp}> <i className={this.state.visited ? "far fa-check-square" : "fas fa-check-square"}></i></button>
-      <button className='deleteButton' onClick={this.handleDeleteCampCard}><i className="far fa-trash-alt"></i></button>
-      </div>
+
+        <div>
+          <h2 className='campName'>{ this.props.filteredCampgrounds.name }</h2>
+          <button className='favoriteButton' onClick={this.handleFavoriteCamp}><i className={this.state.favorite ? "far fa-heart" : "fas fa-heart"}></i></button>
+          <button className='visitedButton' onClick={this.handleVisitedCamp}> <i className={this.state.visited ? "far fa-check-square" : "fas fa-check-square"}></i></button>
+          <button className='deleteButton' onClick={this.handleDeleteCampCard}><i className="far fa-trash-alt"></i></button>
+        </div>
         <h3><span className='textLabel'>Location: </span>{ this.props.filteredCampgrounds.location }</h3>
         <h3><span className='textLabel'>Available Seasons: </span>{ this.props.filteredCampgrounds.season}</h3>
         <ul className='campInfo'>
