@@ -21,11 +21,9 @@ export default class CampCard extends Component {
     console.log(this.state);
   }
 
-  handleDeleteCampCard = (event, props) => {
-    event.preventDefault();
-    console.log('filtered', this.props.filteredCampgrounds);
-    // console.log(delete this.props.filteredCampgrounds);
-    
+  handleDeleteCampCard = (e) => {
+    e.preventDefault();
+    e.target.closest('section').remove(); 
   }
 
   handleFavoriteCamp = (event) => {

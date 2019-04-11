@@ -13,11 +13,10 @@ export default class HikeCard extends Component {
 
   }
 
-  handleDeleteHikeCard = (event) => {
-    event.preventDefault();
-    this.setState({
-      deleted: JSON.parse(localStorage.removeItem(this.props.filteredHiking.name)) || false
-    })
+  handleDeleteHikeCard = (e) => {
+    e.preventDefault();
+    e.target.closest('section').remove();
+    
   }
 
   handleFavoriteHikeButton = (event) => {
