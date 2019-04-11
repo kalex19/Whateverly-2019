@@ -60,6 +60,7 @@ export default class CampCard extends Component {
     
     return (
       <section className='campingCard'>
+
         <div>
           <h2 className='campName'>{ this.props.filteredCampgrounds.name }</h2>
           <button className='favoriteButton' onClick={this.handleFavoriteCamp}><i className={this.state.favorite ? "far fa-heart" : "fas fa-heart"}></i></button>
@@ -78,3 +79,4 @@ export default class CampCard extends Component {
     </section>
     )
   }
+}
