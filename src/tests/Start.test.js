@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Start from '../Start.js';
+import Start from '../Start/Start.js';
 import { shallow } from 'enzyme';
 
 
@@ -28,31 +28,37 @@ const mockCamping = [
 ]
 const mockInput = 'Grand Junction';
 
+const mockHandleChange = jest.fn();
+
+
 describe('Start', () => {
 let wrapper 
 
 beforeEach(() => {
-    wrapper.shallow(
-        // <Start startInputValue = ''/>
+    wrapper = shallow(
+        <Start />
     )
 });
-it('should have an initial input value of an empty string', () => {
-    expect(startInputValue).toEqual('');
+it('should match snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+
+it('should have a default state', () => {
+    expect(wrapper.state()).toEqual({
+        startInputValue: ''
+    })
 });
 
-it('should be able to grab the user location based on submission, () => {
-    expect(startInputValue).toEqual('');
-    grabLocation();
-    expect(startInputValue).toEqual{ mockInput };
-});
-
-// it('should be able to submit a user location based on submission', () => {
-
+// it('should have an event listener for handle change', () => {
+//     expect(mockHandleChange).toBeCalled()
 // });
 
-it('should mock snapshot', () => {
-    expect(wrapper).toMatchSnapshot();
-})
+it('should have an event listener for handle click', () => {
+    const mockClickCampingBtn = jest.fn();
+    const wrapper = shallow(<Start onClick = {mockClickCampingBtn}/>)
+    wrapper.find('input').hasClassName('campStartBtn').simulate('click');
+    expect(mockClickCampingBtn).toHaveBeenCalled()
+});
 
 })
 
