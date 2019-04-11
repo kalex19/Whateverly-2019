@@ -66,11 +66,16 @@ export default class CampCard extends Component {
       <button className='visitedButton' onClick={this.handleVisitedCamp}> <i className={this.state.visited ? "far fa-check-square" : "fas fa-check-square"}></i></button>
       <button className='deleteButton' onClick={this.handleDeleteCampCard}><i className="far fa-trash-alt"></i></button>
       </div>
-      <h3><span className='textLabel'>Location: </span>{ this.props.filteredCampgrounds.location }</h3>
-      <h3><span className='textLabel'>Available Seasons: </span>{ this.props.filteredCampgrounds.season }</h3>
-      <input className="moreBTn" type="button"value="More" onClick={this.createCampPopUp} />
-      {campPopUp}
-      </section>
-      )
-    }
+        <h3><span className='textLabel'>Location: </span>{ this.props.filteredCampgrounds.location }</h3>
+        <h3><span className='textLabel'>Available Seasons: </span>{ this.props.filteredCampgrounds.season}</h3>
+        <ul className='campInfo'>
+          <li><span className='textLabel'>Elevation: </span>{this.props.filteredCampgrounds.elevation}</li>
+          <li><span className='textLabel'>Camping Type: </span>{this.props.filteredCampgrounds.camping.join(', ')}</li>
+          <li><span className='textLabel'>Nearby Activities: </span>{this.props.filteredCampgrounds.activities.join(', ')}</li>
+        </ul>
+        <input className="moreBTn" type="button"value="More" onClick={this.createCampPopUp} />
+        {campPopUp}
+    </section>
+    )
   }
+}
