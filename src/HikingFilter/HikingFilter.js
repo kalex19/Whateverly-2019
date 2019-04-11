@@ -7,20 +7,18 @@ export default class Hiking extends Component {
     super(props);
   }
 
-
-
-     render () {
-      let Card = this.props.filteredHiking.map((trail) => {
-        return (<HikeCard 
-          filteredHiking = {trail}
-          key = {trail.name}
-      />)
+  render () {
+    let Card = this.props.filteredHiking.map((trail) => {
+      return (<HikeCard 
+        filteredHiking = {trail}
+        key = {trail.name}
+        />)
     })
-         return (
-          <section className='hikeCardContainer'>{ Card }</section>
-         )
-     }
-}
+    return (
+      <section className='hikeCardContainer'>{ Card }</section>
+      )
+    }
+  }
 
 
 
