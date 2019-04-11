@@ -1,19 +1,19 @@
 .filterContainer {
-  margin: 0px 5%;
-  display: grid;
-  grid-row-start: 2;
-  color: white;
   background-color: rgba(63, 39, 46, 0.75);
+  color: white;
+  display: grid;
   font-weight: 600;
+  grid-row-start: 2;
   height: 100%;
+  margin: 0 5%;
   padding: 10%;
 } 
 
 .formHeader {
-  margin-top: 0;
-  font-weight: 900;
   font-size: 1.2em;
+  font-weight: 900;
   line-height: 30px;
+  margin-top: 0;
 }
 
 .filterSection {
@@ -32,15 +32,15 @@
 }
 
 .filterSubmit, 
-  .resetSubmit {
-    margin: 15% 6%;
-    height: 60px;
-    width: 150px;
-    font-weight: 900;
-  }
+.resetSubmit {
+  font-weight: 900;
+  height: 60px;
+  margin: 15% 6%;
+  width: 150px;
+}
 
-  .filterSubmit:hover,
-  .resetSubmit:hover {
-    color: white;
-    background-color: #af5700;
-  }
+.filterSubmit:hover,
+.resetSubmit:hover {
+  background-color: #af5700;
+  color: white;
+}

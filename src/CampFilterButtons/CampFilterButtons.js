@@ -6,7 +6,6 @@ export default class CampFilterButtons extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cards: []
     }
   }
 
@@ -30,19 +29,19 @@ export default class CampFilterButtons extends Component {
 
   isLess5000 = (props) => {
     let less5000Camp = this.props.filteredCampgrounds.filter(campground => campground['elevation'] <= 4999)
-      this.props.filteredCampResults(less5000Camp);
+    this.props.filteredCampResults(less5000Camp);
     return less5000Camp;
   }
 
   isLess9000 = (props) => {
     let less9000Camp = this.props.filteredCampgrounds.filter(campground => campground['elevation'] >= 5000 && campground['elevation']<= 8999)
-     this.props.filteredCampResults(less9000Camp);
+    this.props.filteredCampResults(less9000Camp);
     return less9000Camp;
   }
 
   isLess11000 = (props) => {
     let less11000Camp = this.props.filteredCampgrounds.filter(campground => campground['elevation'] >= 9000 && campground['elevation']<= 11000)
-      this.props.filteredCampResults(less11000Camp);
+    this.props.filteredCampResults(less11000Camp);
     return less11000Camp;
   }
 
@@ -58,40 +57,13 @@ export default class CampFilterButtons extends Component {
     return no;
   }
 
-
-   filter = (e) => {
+  filter = (e) => {
     e.preventDefault();
-    console.log('filter e',e)
-    this.filterCards(e);
-   }
-
-   filterCards = (e, props) => {
-    let card = this.props.filteredCampgrounds.filter(campground => e.target.value)
-    console.log('target value', e.target.value)
-    console.log('card', card);
-    console.log('pre state card', this.state.cards);
-    this.setState({
-    cards: card
-    })
-   }
+  }
 
   reset = (e) => {
     e.preventDefault(); 
-    console.log('reset e', e)
-    this.resetForm(e);
   }
-
-  resetForm = (e, props) => {
-    console.log('reset', this.state.cards);
-    this.setState({
-      cards: [],
-      userCampValue: ''
-    })
-  }
-
-  //need to target value of the filter buttons not the submit button
-  //need to dynamically get the right data attribute not just campground
-  //don't know what will happen once this works - get right cards??
 
   render() {
     return (
@@ -99,36 +71,42 @@ export default class CampFilterButtons extends Component {
         <form>
           <h4 className="formHeader">Please pick one option.</h4>
             <div className='filterSection'>
-              <label>Camping Type:</label>
-              <p className="filterBtn">Tent</p><input type="radio" name="type" value="tent" onChange={this.filter}/>
-              <p className="filterBtn">Car</p><input type="radio" name="type" value="car" onChange={this.filter}/>
-              <p className="filterBtn">RV</p><input type="radio" name="type" value="rv" onChange={this.filter}/>
-            </div>
+            <label>Camping Type:</label>
+              <div className="filterBtn">
+                <p>Tent</p><input type="radio" name="type" value="tent" onChange={this.allowsTents}/>
+              </div>
+              <div className="filterBtn">
+                <p>Car</p><input type="radio" name="type" value="car" onChange={this.allowsCars}/>
+              </div>
+              <div className="filterBtn">
+                <p>RV</p><input type="radio" name="type" value="rv" onChange={this.allowsRVs}/>
+              </div>
+              </div>
             <div className='filterSection'>
-              <label>Elevation:</label>
+            <label>Elevation:</label>
               <div className="filterBtn">
-              <p className="filterBtn">5000 feet</p><input type="radio" name="elevation" value="less5000" onChange={this.isLess5000}/>
+                <p className="filterBtn">5000 feet</p><input type="radio" name="elevation" value="less5000" onChange={this.isLess5000}/>
               </div>
               <div className="filterBtn">
-              <p className="filterBtn">5000-8999 feet</p><input type="radio" name="elevation" value="less9000" onChange={this.isLess9000}/>
+                <p className="filterBtn">5000-8999 feet</p><input type="radio" name="elevation" value="less9000" onChange={this.isLess9000}/>
               </div>
               <div className="filterBtn">
-              <p className="filterBtn">9000-11000 feet</p><input type="radio" name="elevation" value="less11000" onChange={this.isLess11000}/>
+               <p className="filterBtn">9000-11000 feet</p><input type="radio" name="elevation" value="less11000" onChange={this.isLess11000}/>
               </div>
-            </div>
+              </div>
             <div className='filterSection'>
-              <label>Take a reservation:</label>
+            <label>Take a reservation:</label>
               <div className="filterBtn">
                 <p className="filterBtn">Yes</p><input type="radio" name="reservation" value="Yes" onChange={this.yesRes}/>
-                </div>
-                <div className="filterBtn">
-                <p className="filterBtn">No</p><input type="radio" name="reservation" value="No" onChange={this.noRes}/>
-                </div>
+              </div>
+              <div className="filterBtn">
+               <p className="filterBtn">No</p><input type="radio" name="reservation" value="No" onChange={this.noRes}/>
+              </div>
             </div>
           <input type="submit" className="filterSubmit" onClick={this.filter}/>
           <input type="reset" value="Reset" className="resetSubmit" onClick={this.reset}/>
         </form>  
       </section>
-    )
+      )
   }
 }

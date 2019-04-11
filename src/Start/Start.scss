@@ -1,57 +1,58 @@
 .header {
-    text-align: center;
-    font-size: 4em;
     color: white;
+    font-size: 4em;
+    text-align: center;
 }
 
 .startWrapper {
+    grid-column-start: 2;
+    grid-row-start: 1;
     margin: 0;
     padding: 0;
     width: 100%;
-    grid-column-start: 2;
-    grid-row-start: 1;
 }
 
 .startLocationInput {
-    width: 40%;
-    height: 60px;
     border: 3px solid #af5700 ;
     color: black;
-    margin: 0 30%;
+    height: 60px;
     margin-bottom: 3%;
+    margin: 0 30%;
+    width: 40%;
 }
 
 .startLocationSearch {
     display: flex;
-    margin-top: 3%;
-    width: 100%;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    margin-top: 3%;
+    width: 100%;
 }
 
 .buttonHolder {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    margin-top: 4%;
     width: 40%;
 }
 
 .campStartBtn,
 .hikeStartBtn {
-    width: 40%;
-    height: 50px;
-    color: rgb(230, 228, 237);
     background-color: rgb(62, 39, 47);
     border: 1px solid white;
+    color: rgb(230, 228, 237);
+    height: 50px;
+    width: 40%;
 }
 
 .campStartBtn:hover {
-    color: #e8dddd;
     background-color: #af5700;
+    color: #e8dddd;
 }
 
 .hikeStartBtn:hover {
-    color: #e8dddd;
     background-color: #af5700;
+    color: #e8dddd;
 }
 
