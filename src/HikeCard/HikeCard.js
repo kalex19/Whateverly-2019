@@ -42,7 +42,7 @@ export default class HikeCard extends Component {
       visited: JSON.parse(localStorage.getItem(this.props.filteredHiking.name)) || false
     })
   }
-
+ 
   render () {
     return (
       <section className='hikingCard'>

@@ -13,6 +13,7 @@ export default class CampCard extends Component {
       popUp: false
     }
   }
+
   createCampPopUp = () => {
     this.setState({
       popUp: true
@@ -50,6 +51,7 @@ export default class CampCard extends Component {
       visited: JSON.parse(localStorage.getItem(this.props.filteredCampgrounds.name)) || false,
     })
   }
+
   render (props) {
     let campPopUp;
     if(this.state.popUp === true) {
@@ -57,7 +59,6 @@ export default class CampCard extends Component {
       allTrails = {this.props.allTrails}
       assignedUserCampInput = {this.props.userCampInputValue} />
     }
-
 
     return (
       <section className='campingCard'>
