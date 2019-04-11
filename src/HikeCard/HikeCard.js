@@ -13,17 +13,14 @@ export default class HikeCard extends Component {
 
   }
 
-  handleDeleteHikeCard() {
-    //create another method that will have the logic to delete the card
-    //potentially have on the app and parse down
-    //if this button is clicked remove from localStorage/component that holds it in local storage and remove with that component 
+  handleDeleteHikeCard = (event) => {
+    event.preventDefault();
     this.setState({
-      deleted: true
+      deleted: JSON.parse(localStorage.removeItem(this.props.filteredHiking.name)) || false
     })
   }
 
   handleFavoriteHikeButton = (event) => {
-    //will have to save to component/LocalStorage  and toggle between favorite and not
     event.preventDefault();
     this.setState({
       favorite: !this.state.favorite
@@ -31,7 +28,6 @@ export default class HikeCard extends Component {
   }
 
   handleVisitedTrails = (event) => {
-    //will have to save to a component/Localstorage and toggle between visited and not
     event.preventDefault();
     this.setState({
       visited: !this.state.visited
