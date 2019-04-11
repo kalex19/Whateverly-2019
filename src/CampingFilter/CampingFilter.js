@@ -5,7 +5,6 @@ import CampCard from '../CampCard/CampCard.js';
 export default class Camping extends Component {
   constructor(props) {
     super(props);
-
   }
 
   render () {
@@ -15,12 +14,11 @@ export default class Camping extends Component {
         key = {campground.name}
         allTrails = {this.props.allTrails}
         assignedUserCampInput = {this.props.userCampInputValue}
-      />)
-
+        />)
     })
     
     return (
       <section className='campCardContainer'>{ Card }</section>
-    )
+      )
+    }
   }
-}

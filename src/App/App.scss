@@ -1,8 +1,8 @@
 .startScreen {
-    margin: 0;
-    padding: 0;
-    width: 100%;
     display: grid;
     grid-template-columns: 15% auto 15%;
     grid-template-rows: 30% auto;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
