@@ -6,6 +6,11 @@ export default class CampFilterButtons extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      filters: {
+        camping: null,
+        elevation: null,
+        reservationAvailable: null,
+      }
     }
   }
 

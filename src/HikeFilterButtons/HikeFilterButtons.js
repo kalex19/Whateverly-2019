@@ -6,56 +6,76 @@ export default class HikeFilterButtons extends Component {
   constructor(props) {
     super(props);
       this.state = {
+        filters: {
+          type: null,
+          difficulty: null,
+          distance: null
+        }
       }
     }
 
-    findLoop = (props) => {
-      let loopTrails = this.props.filteredHiking.filter(trail => trail['type'] === 'Loop');
-      this.props.filteredHikeResults(loopTrails);
-      return loopTrails;
-    }
+    
+    filter = (e, props) => {
+    e.preventDefault()
+    const filters = Object.assign({}, this.state.filters);
+    let filterType = filters.type = e.target.value;
+    console.log("filter type", this.filterType);
+    this.setState({ filters: filters })
+  }
 
-    findOutBack = (props) => {
-      let outBackTrails = this.props.filteredHiking.filter(trail => trail['type'] === 'Out and Back');
-      this.props.filteredHikeResults(outBackTrails);
-      return outBackTrails;
-    }
+    // findLoop = (props) => {
+    //   let loopTrails = this.props.filteredHiking.filter(trail => trail['type'] === 'Loop');
+    //   this.props.filteredHikeResults(loopTrails);
+    //   return loopTrails;
+    // }
 
-    findPoint = (props) => {
-      let pointTrails = this.props.filteredHiking.filter(trail => trail['type'] === 'Point to Point');
-      this.props.filteredHikeResults(pointTrails);
-      return pointTrails;
-    }
+    // findOutBack = (props) => {
+    //   let outBackTrails = this.props.filteredHiking.filter(trail => trail['type'] === 'Out and Back');
+    //   this.props.filteredHikeResults(outBackTrails);
+    //   return outBackTrails;
+    // }
 
-    isEasy = (props) => {
-      let easyTrails = this.props.filteredHiking.filter(trail => trail['difficulty'] === 'Easy')
-      return easyTrails;
-    }
+    // findPoint = (props) => {
+    //   let pointTrails = this.props.filteredHiking.filter(trail => trail['type'] === 'Point to Point');
+    //   this.props.filteredHikeResults(pointTrails);
+    //   return pointTrails;
+    // }
 
-    isMod = (props) => {
-      let modTrails = this.props.filteredHiking.filter(trail => trail['difficulty'] === 'Moderate')
-      return modTrails;
-    }
+    // isEasy = (props) => {
+    //   let easyTrails = this.props.filteredHiking.filter(trail => trail['difficulty'] === 'Easy')
+    //   return easyTrails;
+    // }
 
-    isDiff = (props) => {
-      let diffTrails = this.props.filteredHiking.filter(trail => trail['difficulty'] === 'Difficult')
-      return diffTrails;
-    }
+    // isMod = (props) => {
+    //   let modTrails = this.props.filteredHiking.filter(trail => trail['difficulty'] === 'Moderate')
+    //   return modTrails;
+    // }
 
-    isLess2000 = (props) => {
-      let less2000Trails = this.props.filteredHiking.filter(trail => trail['elevation-gain'] >= 1999)
-      return less2000Trails;
-    }
+    // isDiff = (props) => {
+    //   let diffTrails = this.props.filteredHiking.filter(trail => trail['difficulty'] === 'Difficult')
+    //   return diffTrails;
+    // }
 
-    isLess5000 = (props) => {
-      let less5000Trails = this.props.filteredHiking.filter(trail => trail['elevation-gain'] >= 2000 && trail['elevation-gain']<= 4999)
-      return less5000Trails;
-    }
+    // isLess2000 = (props) => {
+    //   let less2000Trails = this.props.filteredHiking.filter(trail => trail['elevation-gain'] >= 1999)
+    //   return less2000Trails;
+    // }
 
-    isLess8000 = (props) => {
-      let less8000Trails = this.props.filteredHiking.filter(trail => trail['elevation-gain'] >= 5000 && trail['elevation-gain']<= 8000)
-      return less8000Trails;
-    }
+    // isLess5000 = (props) => {
+    //   let less5000Trails = this.props.filteredHiking.filter(trail => trail['elevation-gain'] >= 2000 && trail['elevation-gain']<= 4999)
+    //   return less5000Trails;
+    // }
+
+    // isLess8000 = (props) => {
+    //   let less8000Trails = this.props.filteredHiking.filter(trail => trail['elevation-gain'] >= 5000 && trail['elevation-gain']<= 8000)
+    //   return less8000Trails;
+   // }
+
+    // filter = () => {
+    //   let allFilters = this.props.filteredHiking.filter(item => this.findLoop || this.findOutBack || this.findPoint).filter(item => this.isEasy || this.isMod || this.isDiff).filter(item => this.isLess2000 || this.isLess5000 || this.isLess8000);
+    //   console.log("filter");
+    //   return allFilters;
+    // }
 
   render() {
     return (
