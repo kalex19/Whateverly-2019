@@ -10,7 +10,6 @@ export default class CampCard extends Component {
     this.state = {
       favorite: false,
       visited: false,
-      // deleted: false,
       popUp: false
     }
   }
@@ -42,7 +41,6 @@ export default class CampCard extends Component {
 
   componentDidUpdate = () => {
     localStorage.setItem(this.props.filteredCampgrounds.name, JSON.stringify(this.state));
-    // deleted: JSON.parse(localStorage.getItem(this.props.filteredCampgrounds.name)) || false
 
   }
 

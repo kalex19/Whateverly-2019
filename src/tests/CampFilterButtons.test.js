@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import FilterButton from '../FilterButton.js';
+import CampFilterButtons from '../CampFilterButtons/CampFilterButtons.js';
 import { shallow } from 'enzyme';
 
 const mockCamping = [
@@ -26,17 +26,24 @@ const mockCamping = [
     }
 ]
 
-describes('FilterButtons', () => {
+filteredCampgrounds={mockCamping}
+
+describe('CampFilterButtons', () => {
 let wrapper
 
 beforeEach(() => {
-    wrapper.shallow(
-        <FilterButton />
+    wrapper = shallow(
+        <CampFilterButtons />
     )
 });
 
-it('should mock the snapshot', () => {
-    expect(wrapper).toMatchSnapshot();
+// it('should mock the snapshot', () => {
+//     expect(wrapper).toMatchSnapshot();
+// });
+
+it('should have a default state', () => {
+    expect(wrapper.state()).toEqual({
+    })
 });
 
 })
