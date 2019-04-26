@@ -16,7 +16,7 @@ The main learning goals of this project was to begin learning how to use React, 
 ## Our Successes
 Our group encountered many successes, challenges, and quite a list of features we would like to add in the future (see our issues for more information on github). Each member of our project just recently learned about React so our skill level was the same going into the project. 
 
-## Our Challeneges
+## Our Challenges
 One of our biggest challenges was creating a dynamic filter for several search options for both camping and hiking.
 
 ## Technologies Used
