@@ -15,8 +15,8 @@ XCO is an app designed for users to choose a hiking trail or campground based on
 <h2>Installation</h2>
 <ul>
     <li>Clone the repo to your local machine</li>
-    <li>Run npm install</li>
-    <li>Run npm start to start the server</li>
+    <li>Run ```npm install```</li>
+    <li>Run ```npm start``` to start the server</li>
     <li>Open your browser to the localhost specified in your terminal</li>
     <li>Start searching by location</li>
 </ul>
