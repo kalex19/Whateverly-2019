@@ -1,20 +1,23 @@
-# Whateverly-2019
+# Whateverly: Mod 2
 
-<h2>Description</h2>
-XCO is an app designed for users to choose a hiking trail or campground based on a location or nearest city they want to go to. A user can select whether they prefer to go camping or hiking they can search a specific category relevant to either of those (IE camping would be type of camping). 
+## Description
+XCO is an app designed for users to choose a hiking trail or campground based on a location or nearest city they want to go to. A user can select whether they prefer to go camping or hiking they can search a specific category relevant to either of those (ie. camping would be type of camping). 
 
+## Features
+* Favorite a campground or favorite a trail
+* Select whether they have visited a campground or trail
+* Remove a specific card with information from the DOM
+* Filter with relevant information for that dataset
+* Search by nearest city
 
-<h2>Features</h2>
-<ul>
-    <li>Favorite a campground or favorite a trail</li>
-    <li>Select whether they have visited a campground or trail</li>
-    <li>Remove a specific card with information from the DOM</li>
-    <li>Filter with relevant information for that dataset</li>
-    <li>Search by nearest city</li>
-</ul>
+## Learning Goals
+The main learning goals of this project was to begin learning how to use React, testing with Jest/Enzyme and be able to create a functional app using React and JSX together. 
 
-<h2>Learning Goals/Challenges/Successes</h2>
-<p>The main learning goals of this project was to begin learning how to use React, testing with Jest/Enzyme and be able to create a functional app using React and JSX together. Our group encountered many successes, challenges, and quite a list of features we would like to add in the future (see our issues for more information on github). Each member of our project just recently learned abuot React so our skill level was the same going into the project. One of our biggest challenges was creating a dynamic filter for several search options for both camping and hiking.</p>
+## Our Successes
+Our group encountered many successes, challenges, and quite a list of features we would like to add in the future (see our issues for more information on github). Each member of our project just recently learned about React so our skill level was the same going into the project. 
+
+## Our Challeneges
+One of our biggest challenges was creating a dynamic filter for several search options for both camping and hiking.
 
 ## Technologies Used
 
@@ -30,31 +33,32 @@ XCO is an app designed for users to choose a hiking trail or campground based on
 * NPM
 * ESLint
 
-<h2>Installation</h2>
-<ul>
-    <li>Clone the repo to your local machine</li>
-    <li>Run npm install</li>
-    <li>Run npm start to start the server</li>
-    <li>Open your browser to the localhost specified in your terminal</li>
-    <li>Start searching by location</li>
-</ul>
+## Installation
+* Clone the repo to your local machine
+* Run npm install
+* Run npm start to start the server
+* Open your browser to the localhost specified in your terminal
+* Start searching by location
 
-<h2>Screenshots</h2>
-<h3>Main Start Screen</h3>
+## Screenshots
+### Main Start Screen
+
 [![localhost-3001-1.png](https://i.postimg.cc/bvzHM2bj/localhost-3001-1.png)](https://postimg.cc/fVr9SyBH)
 
-<h3>Appended Cards</h3>
+### Appended Cards
 
 ### Issues
 
-*
+* Space between cards and user input is too wide
+* More button is disfunctional (should show assiciated camping/hiking suggestions)
+* Needs a arrow down button to direct user to look below for results
+* Favorite and Visited buttons need more instructions (what are they and what does the user do with them)
+* Favorite and Visited buttons are disfunctional
 
-<h2>Collaborators</h2>
-<ul>
-<li>Bridgett Coyle (https://github.com/B-Coyle)</li>
-<li>Emily Dittmer (https://github.com/emilydittmer)</li>
-<li>Katie Lewis (https://github.com/kalex19)</li>
-</ul>
+## Collaborators
+* Bridgett Coyle (https://github.com/B-Coyle)
+* Emily Dittmer (https://github.com/emilydittmer)
+* Katie Lewis (https://github.com/kalex19)
 
 ### License
 Turing School of Software (for providing the project specifications).
